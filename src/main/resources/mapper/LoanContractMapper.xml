@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.jrjzx.supervision.smallloan.mapper.LoanContractMapper">
+	<resultMap type="cn.jrjzx.supervision.smallloan.entity.LoanContract"
+		id="loanContract">
+	</resultMap>
+	<select id="basicStatics" resultType="Map">
+		select
+		round(sum(money)/10000,2) moneySum, sum(loan_info_count)
+		loanInfoCount, round(sum(loan_Balance)/10000,2) loanBalanceSum
+		,round(sum(annual_rate)/count(1),2) averageRate,
+		sum(case when
+		term_type=2 then term*7 when term_type=3 then term*30 when term_type=4
+		then term*30*3 when term_type=5 then term*12*30
+		else term end)
+		totalDays from loan_contract where is_draft=0 and flag=1 and 
+		company_id=#{companyId}
+	</select>
+
+
+	<select id="findRepayPlanAndExtendPlanAndContractList"
+		resultType="Map">
+		select lc.id contractId, lc.contract_number
+		contractNumber,lc.sign_time signTime,lc.money loanMoney
+		,lc.loan_balance loanBalance
+		,rp.money,rp.interest,rp.repaid_money
+		repaidMoney,rp.repaid_interest repaidInterest, rp.is_settle isSettle
+		from loan_contract lc, repay_plan rp
+		where lc.id=rp.loan_contract_id
+		and lc.is_draft=0 and lc.flag=1 and rp.flag=1 and
+		rp.end_date=date_format(CURRENT_DATE,'%Y-%m-%d')
+		and
+		lc.company_id=#{companyId}
+		<if test="contractNumber !=null and contractNumber != ''">
+			and lc.contract_number like '%${contractNumber}%'
+		</if>
+		<if test="isSettle !=null">
+			and rp.is_settle = #{isSettle}
+		</if>
+		union all
+		select lc.id contractId, lc.contract_number
+		contractNumber,lc.sign_time
+		signTime,lc.money loanMoney
+		,lc.loan_balance loanBalance
+		,rp.money,rp.interest,rp.repaid_money
+		repaidMoney,rp.repaid_interest
+		repaidInterest, rp.is_settle isSettle
+		from loan_contract lc,
+		extend_repay_plan rp
+		where lc.id=rp.contract_id
+		and lc.is_draft=0 and lc.flag=1 and rp.flag=1 and
+		rp.end_date=date_format(CURRENT_DATE,'%Y-%m-%d')
+		and
+		lc.company_id=#{companyId}
+		<if test="contractNumber !=null and contractNumber != ''">
+			and lc.contract_number like '%${contractNumber}%'
+		</if>
+		<if test="isSettle !=null">
+			and rp.is_settle = #{isSettle}
+		</if>
+	</select>
+	<select id="findByParam" resultType="loanContract">
+		select
+		lc.id,lc.company_id companyId,lc.borrower_id
+		borrowerId,lc.contract_number contractNumber,lc.contract_name
+		contractName,lc.report_time reportTime,lc.sign_time signTime,
+		lc.money,lc.term,lc.annual_rate annualRate,lc.loan_method
+		loanMethod,(CASE when
+		lc.borrower_type=1 then eb.name when
+		lc.borrower_type=2 then pb.name
+		end) as borrowerName,
+		tem.dayTerm
+		from
+		loan_contract lc LEFT JOIN enterprise_borrower eb
+		on
+		lc.borrower_id=eb.id LEFT JOIN person_borrower pb on
+		lc.borrower_id=pb.id
+		LEFT JOIN ( select lc1.id, lc1.term * (
+		CASE
+		WHEN lc1.term_type = 1 THEN
+			1
+		WHEN lc1.term_type = 2 THEN
+			7
+		WHEN lc1.term_type = 3 THEN
+			30
+		WHEN lc1.term_type = 4 THEN
+			90
+		WHEN lc1.term_type = 5 THEN
+			360
+		ELSE
+			0
+		END
+	) dayTerm from loan_contract lc1 )  tem on tem.id=lc.id
+		where lc.flag=1 and
+		lc.company_id=#{companyId}
+		and
+		lc.is_draft=0
+		<if test="contractNumber!=null">
+			and lc.contract_number=#{contractNumber}
+		</if>
+		<if test="name!=null">
+			and (eb.name=#{name} or pb.name=#{name})
+		</if>
+		<if test="sreportTime!=null">
+			<![CDATA[ and lc.report_time>#{sreportTime}]]>
+		</if>
+		<if test="ereportTime!=null">
+			<![CDATA[ and lc.report_time<#{ereportTime}]]>
+		</if>
+		<if test="ssignTime!=null">
+			<![CDATA[ and lc.sign_time>#{ssignTime}]]>
+		</if>
+		<if test="esignTime!=null">
+			<![CDATA[ and lc.sign_time<#{esignTime}]]>
+		</if>
+		<if test="smoney>0">
+			<![CDATA[ and lc.money>#{smoney}]]>
+		</if>
+		<if test="emoney>0">
+			<![CDATA[ and lc.money<#{emoney}]]>
+		</if>
+		<if test="sannualRate>0">
+			<![CDATA[ and lc.annual_rate>#{sannualRate}]]>
+		</if>
+		<if test="eannualRate>0">
+			<![CDATA[ and lc.annual_rate<#{eannualRate}]]>
+		</if>
+		<choose>
+			<when test="status==1">
+				and lc.status_is_settle=0 and lc.status_is_overdue=0
+			</when>
+			<when test="status==2">
+				and lc.status_is_settle=1 and lc.status_is_overdue=0
+			</when>
+			<when test="status==3">
+				and lc.status_is_settle=0 and lc.status_is_overdue=1
+			</when>
+			<when test="status==4">
+				and lc.status_is_settle=1 and lc.status_is_overdue=1
+			</when>
+		</choose>
+		<if test="isExtend>-1">
+			and lc.is_extend==isExtend
+		</if>
+		<choose>
+			<when test="term==1">
+				<![CDATA[ and tem.dayTerm<10]]>
+			</when>
+			<when test="term==2">
+				<![CDATA[ and tem.dayTerm>=10 and tem.dayTerm<30]]>
+			</when>
+			<when test="term==3">
+				<![CDATA[ and tem.dayTerm>=30 and tem.dayTerm<90]]>
+			</when>
+			<when test="term==4">
+				<![CDATA[ and tem.dayTerm>=90 and tem.dayTerm<180]]>
+			</when>
+			<when test="term==5">
+				<![CDATA[ and tem.dayTerm>=180 and tem.dayTerm<360]]>
+			</when>
+			<when test="term==6">
+				<![CDATA[ and tem.dayTerm>=360]]>
+			</when>
+		</choose>
+		order by lc.report_time desc
+	</select>
+
+</mapper>

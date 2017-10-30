@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="zh-cn" style="width: 100%;height: 100%;">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>小贷登录</title>
+    <link href="static/build/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="favicon.ico" rel="shortcut icon" type="image/x-icon"/>
+    <link rel="stylesheet" href="static/css/style.css">
+
+    <style>
+
+
+    </style>
+</head>
+
+<body class="login-body">
+<div class="login-box">
+    <h3 class="page-info">登录</h3>
+    <div class="login-content">
+        <form class="form-horizontal" id="login-form">
+            <div class="form-group">
+                <span class="pull-left">用户名:</span>
+                <input id="account" class="form-control pull-left" type="text" placeholder="请输入用户名" name="username" autofocus/>
+            </div>
+            <div class="form-group">
+                <span class="pull-left"> 密码：</span>
+                <input id="password" class="form-control pull-left" type="password" placeholder="请输入密码"
+                       name="password"/>
+            </div>
+            <div class="form-group chaImage-grounp">
+                <span class="pull-left"> 验证码：</span>
+                <input class="form-control " name="chaImage" type="text"   placeholder="请输入验证码,不区分大小写"/>
+                <img class="chaImage pull-left" src="static/build/img/captchaImage.jpg">
+            </div>
+
+            <div class="form-group operate">
+                <button type="submit" id="login"   class="btn btn-primary login-btn">登&nbsp;录</button>
+            </div>
+            <div class="modify-pwd pull-right change-panle">
+                <a href="javascript:;" >修改密码</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+<div class="modify-pwd-box">
+    <h3 class="page-info">修改密码</h3>
+    <div class="login-content">
+        <form class="form-horizontal" id="modify-form">
+            <div class="form-group">
+                <span class="pull-left">原密码:</span>
+                <input id="original-password" class="form-control pull-left" type="text" placeholder="输入原密码" name="originalPwd"
+                       autofocus="autofocus" required/>
+            </div>
+            <div class="form-group">
+                <span class="pull-left"> 新密码：</span>
+                <input id="new-password" class="form-control pull-left" type="password" placeholder="输入新密码"
+                       name="newPwd" required/>
+            </div>
+            <div class="form-group">
+                <span class="pull-left"> 密码确认：</span>
+                <input id="confirm-password" class="form-control pull-left" type="password" placeholder="新密码确认"
+                       name="confirmPwd" required/>
+            </div>
+            <div class="form-group chaImage-grounp">
+                <span class="pull-left"> 验证码：</span>
+                <input class="form-control " name="chaImage" type="text"   placeholder="请输入验证码,不区分大小写"/>
+                <img class="chaImage pull-left" src="static/build/img/captchaImage.jpg">
+            </div>
+
+            <div class="form-group operate">
+                <button type="submit" class="btn btn-primary login-btn">完 &nbsp;成</button>
+            </div>
+            <div class="return-login pull-right ">
+                <a href="javascript:;">返回登录</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+<script src="static/build/lib/jquery.min.js"></script>
+<script src="static/build/lib/sea.min.js"></script>
+<script src="static/js/base.js"></script>
+<script>
+    (function ($) {
+        seajs.use('user',function (u) {
+            u.login();u.modifyPwd();
+        })
+    })(jQuery)
+</script>
+</body>
+</html>

@@ -1,0 +1,854 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>还款与展期</title>
+    <link href="static/build/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="static/build/lib/bootstrap-datepicker/bootstrap-datetimepicker.min.css">
+    <link rel="stylesheet" href="static/build/lib/layer/skin/layer.css">
+    <link rel="stylesheet" href="static/css/style.css">
+    <link href="favicon.ico" rel="shortcut icon" type="image/x-icon" />
+</head>
+
+<nav class="navbar navbar-default ">
+    <div class="login-info clearfix">
+        <div class="container">
+            <span class="pull-left get-date"> </span>
+            <div class="pull-right">
+                <span class="pull-right navbar-collapse">帮助中心</span>
+                <div class="pull-right">
+                    <a href="login.html">用户名</a>
+                    <span>|</span>
+                    <a href="login.html">退出</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="navbar-header">
+            <button  type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                     data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <div class="navbar-header logo">
+                <a href="#" class="pull-left"></a>
+                <span class="pull-left">金融街在线监控平台</span>
+            </div>
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav pull-right">
+                <li><a href="index.html">主页 <span class="sr-only">(current)</span></a></li>
+                <li><a href="base_data.html">基础数据</a></li>
+                <li><a href="finance_data.html">财务数据</a></li>
+                <li><a href="contract_data.html">合同数据</a></li>
+                <li><a href="financing.html">融资数据</a></li>
+                <li><a href="account_data.html">账户数据</a></li>
+                <li><a href="loan_structure.html">贷款结构</a></li>
+                <li><a href="capital_loss_count.html">资产损失准备计提</a></li>
+                <li><a href="loss_management.html" style="padding-right: 0;">报损业务管理</a></li>
+            </ul>
+
+        </div>
+    </div>
+</nav>
+
+<!--<nav class="navbar navbar-default">
+    <div class="container-fluid">
+        &lt;!&ndash; Brand and toggle get grouped for better mobile display &ndash;&gt;
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">Brand</a>
+        </div>
+
+        &lt;!&ndash; Collect the nav links, forms, and other content for toggling &ndash;&gt;
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li>
+                <li><a href="#">Link</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">Action</a></li>
+                        <li><a href="#">Another action</a></li>
+                        <li><a href="#">Something else here</a></li>
+                        <li role="separator" class="divider"></li>
+                        <li><a href="#">Separated link</a></li>
+                        <li role="separator" class="divider"></li>
+                        <li><a href="#">One more separated link</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <form class="navbar-form navbar-left">
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Search">
+                </div>
+                <button type="submit" class="btn btn-default">Submit</button>
+            </form>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="#">Link</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">Action</a></li>
+                        <li><a href="#">Another action</a></li>
+                        <li><a href="#">Something else here</a></li>
+                        <li role="separator" class="divider"></li>
+                        <li><a href="#">Separated link</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>&lt;!&ndash; /.navbar-collapse &ndash;&gt;
+    </div>&lt;!&ndash; /.container-fluid &ndash;&gt;
+</nav>-->
+
+
+<div class="container">
+    <div class="contract-view">
+        <ul>
+            <li style="width: 25%" class="active"> 计划还款与实际还款</li>
+            <li style="width: 25%">展期计划还款与展期实际还款</li>
+            <li style="width: 25%">展期历史计划还款与历史实际还款</li>
+            <li style="width: 25%">放款信息</li>
+        </ul>
+        <div class="contract-content">
+            <div class="contract-view-table active">
+                <div class="table-template table">
+                    <div class="table-info">
+                        <h4 class="table-title pull-left">计划还款信息</h4>
+                    </div>
+                    <div class="table-content">
+                        <table class="table table-hover cur">
+                            <thead class="thead-col">
+                            <tr>
+                                <th>截至日期</th>
+                                <th>还款本金（元）</th>
+                                <th>还款利息（元）</th>
+                                <th>是否结清</th>
+                                <th>是否逾期</th>
+                            </tr>
+
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td>2016-06-09</td>
+                                <td>300,693,00</td>
+                                <td>3,693.00</td>
+                                <td>是</td>
+                                <td>否</td>
+                            </tr>
+                            <tr>
+                                <td>2016-06-09</td>
+                                <td>300,693,00</td>
+                                <td>3,693.00</td>
+                                <td>是</td>
+                                <td>否</td>
+                            </tr>
+                            <tr>
+                                <td>2016-06-09</td>
+                                <td>300,693,00</td>
+                                <td>3,693.00</td>
+                                <td>是</td>
+                                <td>否</td>
+                            </tr>
+                            <tr>
+                                <td>2016-06-09</td>
+                                <td>300,693,00</td>
+                                <td>3,693.00</td>
+                                <td>是</td>
+                                <td>否</td>
+                            </tr>
+                            <tr>
+                                <td>2016-06-09</td>
+                                <td>300,693,00</td>
+                                <td>3,693.00</td>
+                                <td>是</td>
+                                <td>否</td>
+                            </tr>
+                            <tr>
+                                <td>2016-06-09</td>
+                                <td>300,693,00</td>
+                                <td>3,693.00</td>
+                                <td>是</td>
+                                <td>否</td>
+                            </tr>
+                            <tr>
+                                <td>2016-06-09</td>
+                                <td>300,693,00</td>
+                                <td>3,693.00</td>
+                                <td>是</td>
+                                <td>否</td>
+                            </tr>
+                            <tr>
+                                <td>2016-06-09</td>
+                                <td>300,693,00</td>
+                                <td>3,693.00</td>
+                                <td>是</td>
+                                <td>否</td>
+                            </tr>
+                            <tr>
+                                <td>2016-06-09</td>
+                                <td>300,693,00</td>
+                                <td>3,693.00</td>
+                                <td>是</td>
+                                <td>否</td>
+                            </tr>
+                            <tr>
+                                <td>2016-06-09</td>
+                                <td>300,693,00</td>
+                                <td>3,693.00</td>
+                                <td>是</td>
+                                <td>否</td>
+                            </tr>
+
+                            </tbody>
+
+                        </table>
+                    </div>
+
+                    <nav aria-label="Page navigation" class="pull-right">
+                        <ul class="pagination">
+                            <li>
+                                <a href="#" aria-label="Previous">
+                                    <span aria-hidden="true">&laquo;</span>
+                                </a>
+                            </li>
+                            <li class="active"><a href="#">1</a></li>
+                            <li><a href="#">2</a></li>
+                            <li>
+                                <a href="#" aria-label="Next">
+                                    <span aria-hidden="true">&raquo;</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+
+                <div class="table-template table">
+                    <div class="table-info">
+                        <h4 class="table-title pull-left">实际还款信息</h4>
+                    </div>
+                    <div class="table-content">
+                        <table class="table table-hover cur">
+                            <thead class="thead-col">
+                            <tr>
+                                <th>截至日期</th>
+                                <th>还款本金（元）</th>
+                                <th>还款利息（元）</th>
+                                <th>是否结清</th>
+                                <th>是否逾期</th>
+                            </tr>
+
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td>2016-06-09</td>
+                                <td>300,693,00</td>
+                                <td>3,693.00</td>
+                                <td>是</td>
+                                <td>否</td>
+                            </tr>
+                            <tr>
+                                <td>2016-06-09</td>
+                                <td>300,693,00</td>
+                                <td>3,693.00</td>
+                                <td>是</td>
+                                <td>否</td>
+                            </tr>
+                            <tr>
+                                <td>2016-06-09</td>
+                                <td>300,693,00</td>
+                                <td>3,693.00</td>
+                                <td>是</td>
+                                <td>否</td>
+                            </tr>
+                            <tr>
+                                <td>2016-06-09</td>
+                                <td>300,693,00</td>
+                                <td>3,693.00</td>
+                                <td>是</td>
+                                <td>否</td>
+                            </tr>
+                            <tr>
+                                <td>2016-06-09</td>
+                                <td>300,693,00</td>
+                                <td>3,693.00</td>
+                                <td>是</td>
+                                <td>否</td>
+                            </tr>
+                            <tr>
+                                <td>2016-06-09</td>
+                                <td>300,693,00</td>
+                                <td>3,693.00</td>
+                                <td>是</td>
+                                <td>否</td>
+                            </tr>
+                            <tr>
+                                <td>2016-06-09</td>
+                                <td>300,693,00</td>
+                                <td>3,693.00</td>
+                                <td>是</td>
+                                <td>否</td>
+                            </tr>
+                            <tr>
+                                <td>2016-06-09</td>
+                                <td>300,693,00</td>
+                                <td>3,693.00</td>
+                                <td>是</td>
+                                <td>否</td>
+                            </tr>
+                            <tr>
+                                <td>2016-06-09</td>
+                                <td>300,693,00</td>
+                                <td>3,693.00</td>
+                                <td>是</td>
+                                <td>否</td>
+                            </tr>
+                            <tr>
+                                <td>2016-06-09</td>
+                                <td>300,693,00</td>
+                                <td>3,693.00</td>
+                                <td>是</td>
+                                <td>否</td>
+                            </tr>
+
+                            </tbody>
+
+                        </table>
+                    </div>
+                    <nav aria-label="Page navigation" class="pull-right">
+                        <ul class="pagination">
+                            <li>
+                                <a href="#" aria-label="Previous">
+                                    <span aria-hidden="true">&laquo;</span>
+                                </a>
+                            </li>
+                            <li class="active"><a href="#">1</a></li>
+                            <li><a href="#">2</a></li>
+                            <li>
+                                <a href="#" aria-label="Next">
+                                    <span aria-hidden="true">&raquo;</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+
+
+                </div>
+            </div>
+            <div class="contract-view-table ">
+                <div class="table-template table clearfix">
+                    <div class="table-info pull-left">
+                        <h4 class="table-title pull-left">展期计划还款信息</h4>
+                        <span id="new-plan" class="pull-right tint-col"  >新建展期计划</span>
+                    </div>
+
+                    <div class="table-content">
+                        <table class="table table-hover cur">
+                            <thead class="thead-col">
+                            <tr>
+                                <th>截至日期</th>
+                                <th>还款本金（元）</th>
+                                <th>还款利息（元）</th>
+                                <th>是否结清</th>
+                                <th>是否逾期</th>
+                            </tr>
+
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td>2016-06-09</td>
+                                <td>300,693,00</td>
+                                <td>3,693.00</td>
+                                <td>是</td>
+                                <td>否</td>
+                            </tr>
+                            <tr>
+                                <td>2016-06-09</td>
+                                <td>300,693,00</td>
+                                <td>3,693.00</td>
+                                <td>是</td>
+                                <td>否</td>
+                            </tr>
+                            <tr>
+                                <td>2016-06-09</td>
+                                <td>300,693,00</td>
+                                <td>3,693.00</td>
+                                <td>是</td>
+                                <td>否</td>
+                            </tr>
+                            <tr>
+                                <td>2016-06-09</td>
+                                <td>300,693,00</td>
+                                <td>3,693.00</td>
+                                <td>是</td>
+                                <td>否</td>
+                            </tr>
+                            <tr>
+                                <td>2016-06-09</td>
+                                <td>300,693,00</td>
+                                <td>3,693.00</td>
+                                <td>是</td>
+                                <td>否</td>
+                            </tr>
+                            <tr>
+                                <td>2016-06-09</td>
+                                <td>300,693,00</td>
+                                <td>3,693.00</td>
+                                <td>是</td>
+                                <td>否</td>
+                            </tr>
+                            <tr>
+                                <td>2016-06-09</td>
+                                <td>300,693,00</td>
+                                <td>3,693.00</td>
+                                <td>是</td>
+                                <td>否</td>
+                            </tr>
+                            <tr>
+                                <td>2016-06-09</td>
+                                <td>300,693,00</td>
+                                <td>3,693.00</td>
+                                <td>是</td>
+                                <td>否</td>
+                            </tr>
+                            <tr>
+                                <td>2016-06-09</td>
+                                <td>300,693,00</td>
+                                <td>3,693.00</td>
+                                <td>是</td>
+                                <td>否</td>
+                            </tr>
+                            <tr>
+                                <td>2016-06-09</td>
+                                <td>300,693,00</td>
+                                <td>3,693.00</td>
+                                <td>是</td>
+                                <td>否</td>
+                            </tr>
+
+                            </tbody>
+
+                        </table>
+                    </div>
+                    <p>注：展期计划建立后，还款均按照最新展期计划执行，要求新建展期计划的还款本金和不少于合同剩下的还款本金余额</p>
+                    <nav aria-label="Page navigation" class="pull-right">
+                        <ul class="pagination">
+                            <li>
+                                <a href="#" aria-label="Previous">
+                                    <span aria-hidden="true">&laquo;</span>
+                                </a>
+                            </li>
+                            <li class="active"><a href="#">1</a></li>
+                            <li><a href="#">2</a></li>
+                            <li>
+                                <a href="#" aria-label="Next">
+                                    <span aria-hidden="true">&raquo;</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+
+                <div class="table-template table">
+                    <div class="table-info">
+                        <h4 class="table-title pull-left">展期实际还款信息</h4>
+                    </div>
+                    <div class="table-content">
+                        <table class="table table-hover cur">
+                            <thead class="thead-col">
+                            <tr>
+                                <th>截至日期</th>
+                                <th>还款本金（元）</th>
+                                <th>还款利息（元）</th>
+                                <th>是否结清</th>
+                                <th>是否逾期</th>
+                            </tr>
+
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td>2016-06-09</td>
+                                <td>300,693,00</td>
+                                <td>3,693.00</td>
+                                <td>是</td>
+                                <td>否</td>
+                            </tr>
+                            <tr>
+                                <td>2016-06-09</td>
+                                <td>300,693,00</td>
+                                <td>3,693.00</td>
+                                <td>是</td>
+                                <td>否</td>
+                            </tr>
+                            <tr>
+                                <td>2016-06-09</td>
+                                <td>300,693,00</td>
+                                <td>3,693.00</td>
+                                <td>是</td>
+                                <td>否</td>
+                            </tr>
+                            <tr>
+                                <td>2016-06-09</td>
+                                <td>300,693,00</td>
+                                <td>3,693.00</td>
+                                <td>是</td>
+                                <td>否</td>
+                            </tr>
+                            <tr>
+                                <td>2016-06-09</td>
+                                <td>300,693,00</td>
+                                <td>3,693.00</td>
+                                <td>是</td>
+                                <td>否</td>
+                            </tr>
+                            <tr>
+                                <td>2016-06-09</td>
+                                <td>300,693,00</td>
+                                <td>3,693.00</td>
+                                <td>是</td>
+                                <td>否</td>
+                            </tr>
+                            <tr>
+                                <td>2016-06-09</td>
+                                <td>300,693,00</td>
+                                <td>3,693.00</td>
+                                <td>是</td>
+                                <td>否</td>
+                            </tr>
+                            <tr>
+                                <td>2016-06-09</td>
+                                <td>300,693,00</td>
+                                <td>3,693.00</td>
+                                <td>是</td>
+                                <td>否</td>
+                            </tr>
+                            <tr>
+                                <td>2016-06-09</td>
+                                <td>300,693,00</td>
+                                <td>3,693.00</td>
+                                <td>是</td>
+                                <td>否</td>
+                            </tr>
+                            <tr>
+                                <td>2016-06-09</td>
+                                <td>300,693,00</td>
+                                <td>3,693.00</td>
+                                <td>是</td>
+                                <td>否</td>
+                            </tr>
+
+                            </tbody>
+
+                        </table>
+                    </div>
+
+                    <nav aria-label="Page navigation" class="pull-right">
+                        <ul class="pagination">
+                            <li>
+                                <a href="#" aria-label="Previous">
+                                    <span aria-hidden="true">&laquo;</span>
+                                </a>
+                            </li>
+                            <li class="active"><a href="#">1</a></li>
+                            <li><a href="#">2</a></li>
+                            <li>
+                                <a href="#" aria-label="Next">
+                                    <span aria-hidden="true">&raquo;</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+
+
+                </div>
+            </div>
+            <div class="contract-view-table ">
+                <div class="table-template table">
+                    <div class="table-info">
+                        <h4 class="table-title pull-left">展期利息还款信息</h4>
+                    </div>
+                    <div class="table-content">
+                        <table class="table table-hover cur">
+                            <thead class="thead-col">
+                            <tr>
+                                <th>截至日期</th>
+                                <th>还款本金（元）</th>
+                                <th>已还本金（元）</th>
+                                <th>还款利息（元）</th>
+                                <th>已还利息（元）</th>
+                                <th>是否结清</th>
+                                <th>是否逾期</th>
+                            </tr>
+
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td>2016-06-09</td>
+                                <td>300,693,00</td>
+                                <td>300,693,00</td>
+                                <td>300,693,00</td>
+                                <td>3,693.00</td>
+                                <td>是</td>
+                                <td>否</td>
+                            </tr>
+                            <tr>
+                                <td>2016-06-09</td>
+                                <td>300,693,00</td>
+                                <td>3,693.00</td>
+                                <td>是</td>
+                                <td>否</td>
+                            </tr>
+                            <tr>
+                                <td>2016-06-09</td>
+                                <td>300,693,00</td>
+                                <td>3,693.00</td>
+                                <td>是</td>
+                                <td>否</td>
+                            </tr>
+                            <tr>
+                                <td>2016-06-09</td>
+                                <td>300,693,00</td>
+                                <td>3,693.00</td>
+                                <td>是</td>
+                                <td>否</td>
+                            </tr>
+                            <tr>
+                                <td>2016-06-09</td>
+                                <td>300,693,00</td>
+                                <td>3,693.00</td>
+                                <td>是</td>
+                                <td>否</td>
+                            </tr>
+                            <tr>
+                                <td>2016-06-09</td>
+                                <td>300,693,00</td>
+                                <td>3,693.00</td>
+                                <td>是</td>
+                                <td>否</td>
+                            </tr>
+                            <tr>
+                                <td>2016-06-09</td>
+                                <td>300,693,00</td>
+                                <td>3,693.00</td>
+                                <td>是</td>
+                                <td>否</td>
+                            </tr>
+                            <tr>
+                                <td>2016-06-09</td>
+                                <td>300,693,00</td>
+                                <td>3,693.00</td>
+                                <td>是</td>
+                                <td>否</td>
+                            </tr>
+                            <tr>
+                                <td>2016-06-09</td>
+                                <td>300,693,00</td>
+                                <td>3,693.00</td>
+                                <td>是</td>
+                                <td>否</td>
+                            </tr>
+                            <tr>
+                                <td>2016-06-09</td>
+                                <td>300,693,00</td>
+                                <td>3,693.00</td>
+                                <td>是</td>
+                                <td>否</td>
+                            </tr>
+
+                            </tbody>
+
+                        </table>
+                    </div>
+                    <p>计划还款本金合计：2660.9元；计划还款利息合计：343.99元</p>
+                    <nav aria-label="Page navigation" class="pull-right">
+                        <ul class="pagination">
+                            <li>
+                                <a href="#" aria-label="Previous">
+                                    <span aria-hidden="true">&laquo;</span>
+                                </a>
+                            </li>
+                            <li class="active"><a href="#">1</a></li>
+                            <li><a href="#">2</a></li>
+                            <li>
+                                <a href="#" aria-label="Next">
+                                    <span aria-hidden="true">&raquo;</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+
+                <div class="table-template table">
+                    <div class="table-info">
+                        <h4 class="table-title pull-left">实际还款信息</h4>
+                    </div>
+                    <div class="table-content">
+                        <table class="table table-hover cur">
+                            <thead class="thead-col">
+                            <tr>
+                                <th>截至日期</th>
+                                <th>还款本金（元）</th>
+                                <th>还款利息（元）</th>
+                                <th>是否结清</th>
+                                <th>是否逾期</th>
+                            </tr>
+
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td>2016-06-09</td>
+                                <td>300,693,00</td>
+                                <td>3,693.00</td>
+                                <td>是</td>
+                                <td>否</td>
+                            </tr>
+                            <tr>
+                                <td>2016-06-09</td>
+                                <td>300,693,00</td>
+                                <td>3,693.00</td>
+                                <td>是</td>
+                                <td>否</td>
+                            </tr>
+                            <tr>
+                                <td>2016-06-09</td>
+                                <td>300,693,00</td>
+                                <td>3,693.00</td>
+                                <td>是</td>
+                                <td>否</td>
+                            </tr>
+                            <tr>
+                                <td>2016-06-09</td>
+                                <td>300,693,00</td>
+                                <td>3,693.00</td>
+                                <td>是</td>
+                                <td>否</td>
+                            </tr>
+                            <tr>
+                                <td>2016-06-09</td>
+                                <td>300,693,00</td>
+                                <td>3,693.00</td>
+                                <td>是</td>
+                                <td>否</td>
+                            </tr>
+                            <tr>
+                                <td>2016-06-09</td>
+                                <td>300,693,00</td>
+                                <td>3,693.00</td>
+                                <td>是</td>
+                                <td>否</td>
+                            </tr>
+                            <tr>
+                                <td>2016-06-09</td>
+                                <td>300,693,00</td>
+                                <td>3,693.00</td>
+                                <td>是</td>
+                                <td>否</td>
+                            </tr>
+                            <tr>
+                                <td>2016-06-09</td>
+                                <td>300,693,00</td>
+                                <td>3,693.00</td>
+                                <td>是</td>
+                                <td>否</td>
+                            </tr>
+                            <tr>
+                                <td>2016-06-09</td>
+                                <td>300,693,00</td>
+                                <td>3,693.00</td>
+                                <td>是</td>
+                                <td>否</td>
+                            </tr>
+                            <tr>
+                                <td>2016-06-09</td>
+                                <td>300,693,00</td>
+                                <td>3,693.00</td>
+                                <td>是</td>
+                                <td>否</td>
+                            </tr>
+
+                            </tbody>
+
+                        </table>
+                    </div>
+                    <nav aria-label="Page navigation" class="pull-right">
+                        <ul class="pagination">
+                            <li>
+                                <a href="#" aria-label="Previous">
+                                    <span aria-hidden="true">&laquo;</span>
+                                </a>
+                            </li>
+                            <li class="active"><a href="#">1</a></li>
+                            <li><a href="#">2</a></li>
+                            <li>
+                                <a href="#" aria-label="Next">
+                                    <span aria-hidden="true">&raquo;</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+
+
+                </div>
+            </div>
+            <div class="contract-view-table ">
+                <div class="table-template t2">
+                    <div class="addSpan addInfo">
+                        <a href="javascript:;" class="pull-right">添加</a>
+                    </div>
+                    <div class="table-content">
+                        <table class="table table-hover table-bordered cur" style="text-align: center;">
+
+                            <thead class="thead-col">
+                            <tr >
+                                <th>放款日期</th>
+                                <th>放款金额</th>
+                                <th>债权开始日期</th>
+                                <th>债权结束日期</th>
+                                <th>备注</th>
+                            </tr>
+                            </thead>
+                            <tbody class="rep-info">
+                            <tr>
+                                <td ><input type="text" class="dateIcon form_secondTime"></i></td>
+                                <td ><input type="number" class="dateIcon"></td>
+                                <td ><input type="text" class="dateIcon form_secondTime"></td>
+                                <td ><input type="text" class="dateIcon form_secondTime"></td>
+                                <td>阿斯达阿斯达</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<script src="static/build/lib/jquery.min.js"></script>
+<script src="static/build/lib/sea.min.js"></script>
+<script src="static/js/base.js"></script>
+<script>
+    $(function () {
+        seajs.use('common',function (c) {
+            c.navInit();c.getDayly();c.addItem('addInfo');c.getSecondTime();
+        });
+        seajs.use('extendAndRepay',function (e) {
+           e.newPlan();e.contractTab();
+        });
+    })
+</script>
+
+</body>
+</html>

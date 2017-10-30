@@ -1,0 +1,24 @@
+[
+  {
+    "id": 0,
+    "contractNum": "0000001",
+    "badMenoy": "100.00",
+    "badDate": "",
+    "badType": "普通坏账",
+    "otherRecord": "Dt12222223",
+    "isSure": "已核算",
+    "afterWork": "",
+    "operation": ""
+  },
+  {
+    "id": 1,
+    "contractNum": "0000002",
+    "badMenoy": "30.00",
+    "badDate": "",
+    "badType": "普通坏账",
+    "otherRecord": "Dt12222223",
+    "isSure": "已核算",
+    "afterWork": "",
+    "operation": ""
+  }
+  ]

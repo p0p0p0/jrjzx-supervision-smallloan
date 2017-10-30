@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>添加股东信息</title>
+    <link href="static/build/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="static/build/lib/bootstrap-datepicker/bootstrap-datetimepicker.min.css">
+    <link href="favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <link rel="stylesheet" href="static/css/style.css">
+
+</head>
+<body>
+<nav class="navbar navbar-default">
+    <div class="login-info clearfix">
+        <div class="container">
+            <span class="pull-left get-date"> </span>
+            <div class="pull-right">
+                <span class="pull-right navbar-collapse">帮助中心</span>
+                <div class="pull-right">
+                    <a href="login.html">用户名</a>
+                    <span>|</span>
+                    <a href="login.html">退出</a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="navbar-header">
+            <button  type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                     data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <div class="navbar-header logo">
+                <a href="#" class="pull-left"></a>
+                <span class="pull-left">金融街在线监控平台</span>
+            </div>
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav pull-right">
+                <li><a href="index.html">主页 <span class="sr-only">(current)</span></a></li>
+                <li><a href="base_data.html">基础数据</a></li>
+                <li><a href="finance_data.html">财务数据</a></li>
+                <li><a href="contract_data.html">合同数据</a></li>
+                <li><a href="financing.html">融资数据</a></li>
+                <li><a href="account_data.html">账户数据</a></li>
+                <li><a href="loan_structure.html">贷款结构</a></li>
+                <li><a href="capital_loss_count.html">资产损失准备计提</a></li>
+                <li><a href="loss_management.html" style="padding-right: 0;">报损业务管理</a></li>
+
+            </ul>
+
+        </div>
+    </div>
+</nav>
+
+
+<div class="container">
+    <div class="add_shareholder">
+        <legend>
+            添加股东记录
+        </legend>
+        <div class="form-group">
+            <label class="col-sm-offset-4">
+                <input type="radio" name="shareholder"  checked value="option1"> 法人股东
+            </label>
+            <label class="col-sm-offset-2">
+                <input type="radio" name="shareholder" value="option2"> 自然人股东
+            </label>
+            <p style="width: 100%;text-align: center;"><span>*</span>为必填项</p>
+        </div>
+        <!--法人股东表单-->
+        <form class="form-horizontal cur corporate_shareholder" role="form" >
+            <fieldset>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label" >机构全称</label>
+                    <div class="col-sm-2 required">
+                        <input class="form-control "  type="text" />
+
+                    </div>
+                    <label class="col-sm-2 control-label col-sm-offset-2" >法定代表人</label>
+                    <div class="col-sm-2 required">
+                        <input class="form-control"  type="text"/>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label" >入股日期</label>
+                    <div class="col-sm-2 required">
+                        <input class="form-control form_datetime"  type="text" />
+
+                    </div>
+                    <label class="col-sm-2 control-label col-sm-offset-2">出资额</label>
+                    <div class="col-sm-2 required">
+                        <div class="input-group">
+                            <input type="text" class="form-control">
+                            <span class="input-group-addon">万元</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label" >联系电话</label>
+                    <div class="col-sm-2 required">
+                        <input class="form-control "  type="text"/>
+
+                    </div>
+                    <label class="col-sm-2 control-label col-sm-offset-2" >出资比例</label>
+                    <div class="col-sm-2">
+                        <div class="input-group">
+                            <input type="text" class="form-control">
+                            <span class="input-group-addon">%</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label" >营业执照编号</label>
+                    <div class="col-sm-2 required">
+                        <input class="form-control" id="business_license" type="text"/>
+                    </div>
+                    <label class="col-sm-2 control-label col-sm-offset-2" >统一信用代码</label>
+                    <div class="col-sm-2 required">
+                        <input class="form-control" id="credit_code" type="password"/>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label" >是否上市</label>
+                    <div class="col-sm-2 required">
+                        <select name="is_internetLoan" class="form-control">
+                            <option value="">是</option>
+                            <option value="">否</option>
+                        </select>
+                    </div>
+                    <label class="col-sm-2 control-label col-sm-offset-2">是否国有企业</label>
+                    <div class="col-sm-2 required">
+                        <select name="organization_form" class="form-control">
+                            <option value="">是</option>
+                            <option value="">否</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label" >电子邮件</label>
+                    <div class="col-sm-2">
+                        <input class="form-control" type="text"/>
+                    </div>
+                    <label class="col-sm-2 control-label col-sm-offset-2" >传真</label>
+                    <div class="col-sm-2" style="margin-bottom: 25px;">
+                        <input class="form-control" id="fax" type="password"/>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label " >注册地址</label>
+                    <div class="col-sm-8 required business_address">
+                        <input class="form-control"  type="text"
+                               placeholder="详细地址（**省**市**区（县）**街道（镇）、村（路）****）"/>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label " >通信地址</label>
+                    <div class="col-sm-8 required business_address">
+                        <input class="form-control"  type="text"
+                               placeholder="详细地址（**省**市**区（县）**街道（镇）、村（路）****）"/>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label " >经营地址</label>
+                    <div class="col-sm-8 required business_address">
+                        <input class="form-control"  type="text"
+                               placeholder="详细地址（**省**市**区（县）**街道（镇）、村（路）****）"/>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">经营范围</label>
+                    <div class="required business_scope">
+                        <textarea maxlength="300"  rows="3" placeholder="300字以内"></textarea>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <button type="submit" class="btn btn-info col-sm-1 col-sm-offset-4" disabled>提交</button>
+                    <button type="reset" class="btn btn-info col-sm-1 col-sm-offset-1" >取消</button>
+                </div>
+            </fieldset>
+        </form>
+
+        <!--自然人股东表单-->
+        <form class="form-horizontal natural_shareholder" role="form" >
+            <fieldset>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label" >股东名称</label>
+                    <div class="col-sm-2 required">
+                        <input class="form-control "  type="text" />
+                    </div>
+                    <label class="col-sm-2 control-label col-sm-offset-2">性别</label>
+                    <div class="col-sm-2 required">
+                        <select name="organization_form" class="form-control">
+                            <option value="">男</option>
+                            <option value="">女</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label" >证件类型</label>
+                    <div class="col-sm-2 required">
+                        <select  class="form-control">
+                            <option >身份证</option>
+                            <option >护照</option>
+                            <option >港澳通行证</option>
+                            <option >台胞证</option>
+                        </select>
+                    </div>
+                    <label class="col-sm-2 control-label col-sm-offset-2">证件号码</label>
+                    <div class="col-sm-2 required">
+                        <input class="form-control"  type="text" />
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">出资额</label>
+                    <div class="col-sm-2 required addon-outer">
+                        <div class="input-group">
+                            <input type="text" class="form-control">
+                            <span class="input-group-addon">万元</span>
+                        </div>
+                    </div>
+                    <label class="col-sm-2 control-label col-sm-offset-2" >联系电话/手机</label>
+                    <div class="col-sm-2 ">
+                        <div class="input-group">
+                            <input type="text" class="form-control">
+                        </div>
+                    </div>
+
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label" >入股时间</label>
+                    <div class="col-sm-2 required">
+                        <input class="form-control form_datetime" type="text" />
+                    </div>
+                    <label class="col-sm-2 control-label col-sm-offset-2" >出资比例</label>
+                    <div class="col-sm-2 ">
+                        <div class="input-group">
+                            <input type="text" class="form-control" readonly>
+                            <span class="input-group-addon">%</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label" >工作单位</label>
+                    <div class="col-sm-2 ">
+                        <input class="form-control" type="text" />
+                    </div>
+                    <label class="col-sm-2 control-label col-sm-offset-2" >电子邮件</label>
+                    <div class="col-sm-2 required">
+                        <input class="form-control" type="email"/>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-sm-2 control-label" >户口地址</label>
+                    <div class="col-sm-8 required business_address">
+                        <input class="form-control"  type="text"
+                               placeholder="详细地址（**省**市**区（县）**街道（镇）、村（路）****）"/>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label" >通信地址</label>
+                    <div class="col-sm-8 required business_address">
+                        <input class="form-control"  type="text"
+                               placeholder="详细地址（**省**市**区（县）**街道（镇）、村（路）****）"/>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <button type="submit" class="btn btn-info col-sm-1 col-sm-offset-4"  >提交</button>
+                    <button type="reset" class="btn btn-info col-sm-1 col-sm-offset-1" >取消</button>
+                </div>
+            </fieldset>
+        </form>
+    </div>
+
+</div>
+
+
+
+<script src="static/build/lib/jquery.min.js"></script>
+<script src="static/build/lib/sea.min.js"></script>
+<script src="static/js/base.js"></script>
+<script>
+    $(function () {
+        seajs.use('common',function (c) {
+            c.navInit();c.getDayly();
+        });
+        seajs.use('baseData',function (b) {
+           b.shareholderTab();
+        });
+    })
+</script>
+
+</body>
+</html>

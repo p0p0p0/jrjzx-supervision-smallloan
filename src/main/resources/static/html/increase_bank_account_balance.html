@@ -1,0 +1,156 @@
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>增加银行账户余额报备</title>
+    <link href="static/build/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="static/build/lib/bootstrap-datepicker/bootstrap-datetimepicker.min.css">
+    <link href="favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <link rel="stylesheet" href="static/css/style.css">
+
+</head>
+
+<body>
+<header class="navbar navbar-default navbar-fixed-top">
+    <div class="login-info clearfix">
+        <div class="container">
+            <span class="pull-left get-date"> </span>
+            <div class="pull-right">
+                <span class="pull-right navbar-collapse">帮助中心</span>
+                <div class="pull-right">
+                    <a href="login.html">用户名</a>
+                    <span>|</span>
+                    <a href="login.html">退出</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container nav-header" >
+        <div class="navbar-header " >
+            <button  type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                     data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <div class=" logo">
+                <a href="#" class="pull-left" id="logo"></a>
+                <span class="pull-left">金融街在线监控平台</span>
+            </div>
+        </div>
+        <nav class="collapse navbar-collapse" >
+            <ul class="nav navbar-nav pull-right">
+                <li><a href="index.html">主页</a></li>
+                <li><a href="base_data.html">基础数据</a></li>
+                <li><a href="financial_data.html">财务数据</a></li>
+                <li><a href="contract_data.html">合同数据</a></li>
+                <li><a href="financing.html">融资数据</a></li>
+                <li><a href="account_data.html">账户数据</a></li>
+                <li><a href="loan_structure.html">贷款结构</a></li>
+                <li><a href="capital_loss_count.html">资产损失准备计提</a></li>
+                <li><a href="loss_management.html" style="padding-right: 0;">报损业务管理</a></li>
+            </ul>
+
+        </nav>
+    </div>
+
+
+</header>
+
+<div class="container header-space">
+    <div class="add-form add-finance-data panel">
+        <h3>增加银行账户余额报备</h3>
+        <form>
+
+            <div class="form-group row">
+                <label class="col-sm-2 control-label col-sm-offset-3 lh30" >账号类型</label>
+                <div class="col-sm-6">
+                    <select class="form-control">
+                        <option >基本户</option>
+                        <option >一般户</option>
+                        <option >监管专用户</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-sm-2 control-label col-sm-offset-3 lh30" >银行名称</label>
+                <div class="col-sm-6">
+                    <select  class="form-control">
+                        <option >广州银行</option>
+                        <option >广州农村商业银行</option>
+                        <option >农业银行广东省分行营业部</option>
+                        <option >工商银行广东省分行营业部</option>
+                        <option >建设银行广东省分行</option>
+                        <option >中国银行广东省分行</option>
+                        <option >交通银行广东省分行</option>
+                        <option >广发银行广州分行</option>
+                        <option >中信银行广州分行</option>
+                        <option >民生银行广州分行</option>
+                        <option >招商银行广州分行</option>
+                        <option >兴业银行广州分行</option>
+                        <option >浦发银行广州分行</option>
+                        <option >平安银行广州分行</option>
+                        <option >光大银行广州分行</option>
+                        <option >其它</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label class="col-sm-2 control-label col-sm-offset-3 lh30" >帐号</label>
+                <div class="col-sm-6">
+                    <input class="form-control" type="text"/>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-sm-2 control-label col-sm-offset-3 lh30" >开户日期</label>
+                <div class="col-sm-6">
+                    <input class="form-control form_datetime" type="text"/>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-sm-2 control-label col-sm-offset-3 lh30" >状态</label>
+                <div class="col-sm-6">
+                    <select  class="form-control">
+                        <option >正常</option>
+                        <option >挂失</option>
+                        <option >冻结</option>
+                        <option >睡眠</option>
+                        <option >锁定</option>
+                        <option >质押</option>
+                        <option >封存</option>
+                        <option >销户</option>
+                        <option >其它</option>
+                    </select>
+                </div>
+            </div>
+
+
+            <div class="form-group ">
+                <button type="submit" class="btn btn-info col-sm-2 col-sm-offset-4 mt40" >提交</button>
+                <button type="reset" class="btn btn-info col-sm-2 col-sm-offset-1 mt40" >取消</button>
+            </div>
+
+        </form>
+
+    </div>
+
+</div>
+
+
+
+
+<script src="static/build/lib/jquery.min.js"></script>
+<script src="static/build/lib/sea.min.js"></script>
+<script src="static/js/base.js"></script>
+<script>
+    $(function () {
+        seajs.use('common',function (c) {
+            c.navInit();c.getDayly();
+        })
+    })
+</script>
+
+</body>
+</html>

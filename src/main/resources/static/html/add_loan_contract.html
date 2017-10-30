@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>添加贷款合同</title>
+    <link href="static/build/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="static/build/lib/bootstrap-datepicker/bootstrap-datetimepicker.min.css">
+    <link rel="stylesheet" href="static/build/lib/layer/skin/layer.css">
+    <link rel="stylesheet" href="static/css/style.css">
+    <link href="favicon.ico" rel="shortcut icon" type="image/x-icon"/>
+
+
+</head>
+
+<body>
+<nav class="navbar navbar-default">
+    <div class="login-info clearfix">
+        <div class="container">
+            <span class="pull-left get-date"> </span>
+            <div class="pull-right">
+                <span class="pull-right navbar-collapse">帮助中心</span>
+                <div class="pull-right">
+                    <a href="login.html">用户名</a>
+                    <span>|</span>
+                    <a href="login.html">退出</a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                    data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <div class="navbar-header logo">
+                <a href="#" class="pull-left"></a>
+                <span class="pull-left">金融街在线监控平台</span>
+            </div>
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav pull-right">
+                <li><a href="index.html">主页 <span class="sr-only">(current)</span></a></li>
+                <li><a href="base_data.html">基础数据</a></li>
+                <li><a href="finance_data.html">财务数据</a></li>
+                <li><a href="contract_data.html">合同数据</a></li>
+                <li><a href="financing.html">融资数据</a></li>
+                <li><a href="account_data.html">账户数据</a></li>
+                <li><a href="loan_structure.html">贷款结构</a></li>
+                <li><a href="capital_loss_count.html">资产损失准备计提</a></li>
+                <li><a href="loss_management.html" style="padding-right: 0;">报损业务管理</a></li>
+
+            </ul>
+
+        </div>
+    </div>
+</nav>
+
+
+<div class="container">
+    <div class="panel add_loan_contract">
+        <h2>添加贷款合同</h2>
+        <form class="form-horizontal" role="form">
+            <h4 class="title" style="margin-left: 30px;">
+                基本信息
+            </h4>
+            <fieldset>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label" >贷款合同编号</label>
+                    <div class="col-sm-2 ">
+                        <input class="form-control " type="text" />
+                    </div>
+                    <label class="col-sm-2 control-label col-sm-offset-2" >合同名称</label>
+                    <div class="col-sm-2 ">
+                        <input class="form-control"  type="text"/>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">合同签订日期</label>
+                    <div class="col-sm-2 ">
+                        <input class="form-control form_datetime"  type="text"/>
+                    </div>
+                    <label class="col-sm-2 control-label col-sm-offset-2" >贷款开始日期</label>
+                    <div class="col-sm-2 ">
+                        <input class="form-control form_datetime"  />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">贷款截止日期</label>
+                    <div class="col-sm-2 ">
+                        <input class="form-control form_datetime"  type="text"/>
+                    </div>
+                    <label class="col-sm-2 control-label col-sm-offset-2" >贷款金额</label>
+                    <div class="col-sm-2 ">
+                        <div class="input-group ">
+                            <input type="text" class="form-control">
+                            <span class="input-group-addon">元</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">贷款期限类型</label>
+                    <div class="col-sm-3" style="text-align: left;">
+                        <label class="radio-inline">
+                            <input type="radio" name="loan-term" checked value=""> 日
+                        </label>
+                        <label class="radio-inline">
+                            <input type="radio" name="loan-term" value=""> 周
+                        </label>
+                        <label class="radio-inline">
+                            <input type="radio" name="loan-term" value=""> 月
+                        </label>
+                        <label class="radio-inline">
+                            <input type="radio" name="loan-term" value=""> 季
+                        </label>
+                        <label class="radio-inline">
+                            <input type="radio" name="loan-term" value=""> 年
+                        </label>
+
+
+                    </div>
+                    <label class="col-sm-2 control-label col-sm-offset-1" >贷款期限</label>
+                    <div class="col-sm-2 ">
+                        <div class="input-group ">
+                            <input type="text" class="form-control">
+                            <span class="input-group-addon">期</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">贷款利率</label>
+                    <div class="col-sm-2 ">
+                        <div class="input-group ">
+                            <input type="text" class="form-control">
+                            <span class="input-group-addon">%(月)</span>
+                        </div>
+                    </div>
+                    <label class="col-sm-2 control-label col-sm-offset-2" >折合年化</label>
+                    <div class="col-sm-2 ">
+                        <div class="input-group ">
+                            <input type="text" class="form-control" readonly>
+                            <span class="input-group-addon">%</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label" >受托支付</label>
+                    <div class="col-sm-2 ">
+                        <select name="is_internetLoan" class="form-control">
+                            <option value="">是</option>
+                            <option value="">否</option>
+                        </select>
+                    </div>
+                    <label class="col-sm-2 control-label col-sm-offset-2">还款方式</label>
+                    <div class="col-sm-2 ">
+                        <select class="form-control">
+                            <option value="">等额本息</option>
+                            <option value="">等额本金</option>
+                            <option value="">先息后本</option>
+                            <option value="">灵活还款</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label" >借款区域</label>
+                    <div class="col-sm-4 ">
+                        <select id="s_province" class="form-control pull-left" name="s_province" style="width: 100px"></select>  
+
+                        <select id="s_city" class="form-control pull-left" name="s_city" style="width: 100px"></select>  
+
+                        <select id="s_county" class="form-control pull-left" name="s_county" style="width: 120px"></select>
+                    </div>
+                    <div id="show"></div>
+                    <label class="col-sm-2 control-label ">投向行业</label>
+                    <div class="col-sm-2 ">
+                        <select class="form-control">
+
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label" >贷款用途</label>
+                    <div class="col-sm-2 ">
+                        <select name="is_internetLoan" class="form-control">
+                            <option value="">流动资金贷款</option>
+                            <option value="">固定资产投资贷款</option>
+                            <option value="">其它</option>
+                        </select>
+                    </div>
+                    <label class="col-sm-2 control-label col-sm-offset-2">还款来源</label>
+                    <div class="col-sm-2 ">
+                        <input class="form-control "  type="text" placeholder="填写比如营业收、工资等"/>
+                    </div>
+                </div>
+
+
+
+            </fieldset>
+            <!--还款计划-->
+            <div class="container">
+                <div class="table-template t2">
+                    <div class="table-info">
+                        <h4 class="table-title pull-left">还款计划</h4>
+                    </div>
+                    <div class="addSpan addInfo">
+                        <a href="javascript:;" class="pull-right">添加</a>
+                    </div>
+                    <div class="table-content">
+                        <table class="table table-hover table-bordered cur" style="text-align: center;">
+                            <thead class="thead-col">
+                            <tr >
+                                <th>还款日期</th>
+                                <th>还款本金（元）</th>
+                                <th>还款利息（元）</th>
+                                <th>操作</th>
+                            </tr>
+                            </thead>
+                            <tbody class="new_repay">
+                            <tr>
+                                <td ><input type="text" class="dateIcon form_datetime"></td>
+                                <td ><input type="text" ></td>
+                                <td ><input type="text" ></td>
+                                <td><a class="del"  href="javascript:;">删除</a></td>
+                            </tr>
+                            </tbody>
+
+                        </table>
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-info col-sm-1 col-sm-offset-4"  >提交</button>
+                            <button type="reset" class="btn btn-info col-sm-1 col-sm-offset-1" >取消</button>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+            <!--贷款方式-->
+            <fieldset class="loan-mode">
+            <div class="table-template clearfix">
+                <div class="table-info">
+                    <h4 class="table-title pull-left">贷款方式</h4>
+                </div>
+                <div class="input-group pull-left clearfix loan-style" >
+                    <span class="select">请选择:</span>
+                    <label class="checkbox-inline">
+                        <input type="checkbox" name="credit" >信用
+                    </label>
+                    <label class="checkbox-inline">
+                        <input type="checkbox" name="ensure">保证
+                    </label>
+                    <label class="checkbox-inline">
+                        <input type="checkbox" name="mortgage">抵押
+                    </label>
+                    <label class="checkbox-inline">
+                        <input type="checkbox" name="pledge">质押
+                    </label>
+                    <label class="checkbox-inline">
+                        <input type="checkbox" name="other">其它
+                    </label>
+                </div>
+
+                <div class="ensure " style="display: none;">
+                    <h5>保证合同信息</h5>
+                    <div class="addSpan addInfo">
+                        <a href="javascript:;" class="pull-right">添加</a>
+                    </div>
+                    <div class="table-content">
+                        <table class="table table-hover table-bordered cur" style="text-align: center;">
+                            <thead>
+                            <tr class="thead-col">
+                                <th>抵押物名称</th>
+                                <th>数据及单位</th>
+                                <th>存放地点</th>
+                                <th>抵押物类型</th>
+                                <th>评估价值</th>
+                                <th>操作</th>
+                            </tr>
+                            </thead>
+                            <tbody class="ensure-tb">
+                            <tr>
+                                <td><input type="text" class="form-control"></td>
+                                <td><input type="text" class="form-control"></td>
+                                <td><input type="text" class="form-control"></td>
+                                <td>
+                                    <select class="form-control">
+                                        <option value="">参考抵押</option>
+                                        <option value="">客账抵押</option>
+                                        <option value="">证券抵押</option>
+                                        <option value="">设备抵押</option>
+                                        <option value="">不动产抵押</option>
+                                        <option value="">人寿抵押</option>
+                                        <option value="">其它</option>
+                                    </select>
+                                </td>
+                                <td><input type="text" class="form-control"></td>
+                                <td>
+                                    <a href="javascript:;" class="del">删除</a>
+                                </td>
+                            </tr>
+
+                            </tbody>
+
+                        </table>
+                    </div>
+                </div>
+
+                <div class="mortgage" style="display: none;">
+                    <h5>抵押合同信息</h5>
+                    <div class="addSpan addInfo">
+                        <a href="javascript:;" class="pull-right">添加</a>
+                    </div>
+                    <div class="table-content">
+
+                        <table class="table table-hover table-bordered cur" style="text-align: center;">
+                            <thead>
+                            <tr class="thead-col">
+                                <th>抵押物名称</th>
+                                <th>数据及单位</th>
+                                <th>存放地点</th>
+                                <th>抵押物类型</th>
+                                <th>评估价值</th>
+                                <th>操作</th>
+                            </tr>
+                            </thead>
+                            <tbody class="mortgage-tb">
+                            <tr>
+                                <td><input type="text" class="form-control"></td>
+                                <td><input type="text" class="form-control"></td>
+                                <td><input type="text" class="form-control"></td>
+                                <td>
+                                    <select class="form-control">
+                                        <option value="">参考抵押</option>
+                                        <option value="">客账抵押</option>
+                                        <option value="">证券抵押</option>
+                                        <option value="">设备抵押</option>
+                                        <option value="">不动产抵押</option>
+                                        <option value="">人寿抵押</option>
+                                        <option value="">其它</option>
+                                    </select>
+                                </td>
+                                <td><input type="text" class="form-control"></td>
+                                <td>
+                                    <a href="javascript:;" class="del">删除</a>
+                                </td>
+                            </tr>
+
+                            </tbody>
+
+                        </table>
+                    </div>
+                </div>
+
+
+                <div class="pledge" style="display: none;">
+                    <h5>质押合同信息</h5>
+                    <div class="addSpan addInfo">
+                        <a href="javascript:;" class="pull-right">添加</a>
+                    </div>
+                    <div class="table-content">
+
+                        <table class="table table-hover table-bordered cur" style="text-align: center;">
+                            <thead>
+                            <tr class="thead-col">
+                                <th>抵押物名称</th>
+                                <th>数据及单位</th>
+                                <th>存放地点</th>
+                                <th>抵押物类型</th>
+                                <th>评估价值</th>
+                                <th>操作</th>
+                            </tr>
+                            </thead>
+                            <tbody class="pledge-tb">
+                            <tr>
+                                <td><input type="text" class="form-control"></td>
+                                <td><input type="text" class="form-control"></td>
+                                <td><input type="text" class="form-control"></td>
+                                <td>
+                                    <select class="form-control">
+                                        <option value="">参考抵押</option>
+                                        <option value="">客账抵押</option>
+                                        <option value="">证券抵押</option>
+                                        <option value="">设备抵押</option>
+                                        <option value="">不动产抵押</option>
+                                        <option value="">人寿抵押</option>
+                                        <option value="">其它</option>
+                                    </select>
+                                </td>
+                                <td><input type="text" class="form-control"></td>
+                                <td>
+                                    <a href="javascript:;" class="del">删除</a>
+                                </td>
+                            </tr>
+
+                            </tbody>
+
+                        </table>
+                    </div>
+                </div>
+
+
+
+
+
+            </div>
+        </fieldset>
+            <!--借款人资料-->
+            <fieldset class="borrower-info">
+                <div class="table-template clearfix">
+                    <div class="table-info">
+                        <h4 class="table-title pull-left">借款人资料</h4>
+                    </div>
+                    <div class="addSpan ">
+                        <a href="add_borrower_info.html" class="pull-right">添加</a>
+                    </div>
+                    <div class="table-content">
+                        <table class="table table-hover table-bordered cur" style="text-align: center;">
+                            <thead>
+                            <tr class="thead-col">
+                                <th>借款人</th>
+                                <th>性别</th>
+                                <th>证件种类</th>
+                                <th>证件号码</th>
+                                <th>是否农牧民</th>
+                                <th>联系电话</th>
+                                <th>固定住址</th>
+                                <th>资料完成</th>
+                                <th>操作</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td>
+                                    <a href="javascript:;">删除</a>
+                                    <a href="javascript:;">修改/查看</a>
+                                </td>
+                            </tr>
+
+
+                            </tbody>
+
+                        </table>
+                    </div>
+
+
+                </div>
+            </fieldset>
+            <div class="form-group last">
+                <button type="submit" class="btn btn-info col-sm-1 col-sm-offset-4">提交</button>
+                <button type="reset" class="btn btn-info col-sm-1 col-sm-offset-1">取消</button>
+            </div>
+        </form>
+
+
+    </div>
+
+</div>
+
+
+<script src="static/build/lib/jquery.min.js"></script>
+<script src="static/build/lib/sea.min.js"></script>
+<script src="static/build/js/base.min.js"></script>
+<script src="static/build/lib/area.js"></script>
+<script type="text/javascript">_init_area();</script>
+<script>
+    $(function () {
+        seajs.use('common', function (c) {
+            c.getCurrentDate();
+            c.getDayly();c.addItem('addInfo');c.delItem('del');c.newPlan();c.LoanStyle();
+        });
+        var show  = document.getElementById('show');
+        var county  = document.getElementById('s_county');
+        var city  = document.getElementById('s_city');
+        var province  = document.getElementById('s_province');
+        var showArea = function(){
+            show.innerHTML = "<h3> 省" + province.value + " - 市" +
+
+                city.value + " - 县/区" +
+
+                county.value + "</h3>"
+        }
+//        county.setAttribute('onchange','showArea()');
+    })
+</script>
+
+
+</body>
+</html>

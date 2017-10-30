@@ -1,0 +1,1455 @@
+@charset "utf-8";
+/*css 初始化 */
+html, body, ul, li, ol, dl, dd, dt, p, h1, h2, h3, h4, h5, h6, form, fieldset, legend, img {
+    margin: 0;
+    padding: 0;
+}
+
+fieldset, img, input, button {
+    border: none;
+    padding: 0;
+    margin: 0;
+    outline-style: none;
+}
+
+ul, ol {
+    list-style: none;
+}
+
+input {
+    padding-top: 0;
+    padding-bottom: 0;
+    font-family:"MicrosoftYaHei", "SimSun", "宋体";
+}
+
+select, input {
+    vertical-align: middle;
+}
+
+select, input, textarea {
+    font-size: 12px;
+    margin: 0;
+}
+
+textarea {
+    resize: none;
+}
+
+/*  去掉图片低测默认的3像素空白缝隙*/
+img {
+    border: 0;
+    vertical-align: middle;
+}
+
+
+table {
+    border-collapse: collapse;
+}
+table td{
+    font-size: 12px;
+}
+
+.clearfix:before, .clearfix:after {
+    content: "";
+    display: table;
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+.clearfix {
+    *zoom: 1; /*IE/7/6*/
+}
+
+.tint-col {
+    color: #2b97f7;
+}
+
+.white-col {
+    color: #000;
+}
+
+.thead-col {
+    background: #FBFDFF;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    text-decoration: none;
+    font-weight: normal;
+    font-size: 100%;
+}
+
+h2 {
+    width: 100%;
+    height: 40px;
+    padding: 30px 0;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+}
+
+s, i, em {
+    font-style: normal;
+    text-decoration: none;
+}
+
+/*公共类*/
+.fl {
+    float: left
+}
+
+.fr {
+    float: right
+}
+
+.al {
+    text-align: left
+}
+
+.ac {
+    text-align: center
+}
+
+.ar {
+    text-align: right
+}
+
+.hide {
+    display: none
+}
+.mt10{
+	margin-top:10px;
+}
+.mt40{
+    margin-top: 40px;
+}
+.mt30{
+    margin-top: 30px;
+}
+.mt100{
+    margin-top: 100px;
+}
+.pt100{
+    padding-top: 100px;
+}
+.lh30{
+    line-height: 30px;
+}
+.ml100{
+    margin-left: 100px;
+}
+.mb50{
+    margin-bottom: 50px;
+}
+.pr0{
+    padding-right: 0;
+}
+.fw{
+    font-weight: bold;
+}
+
+body {
+    font-family: "微软雅黑";
+    background-color: rgb(245, 247, 250);
+    overflow-y: scroll;
+}
+
+a {
+    text-decoration: none;
+    font-weight: 400;
+    color: #33ccff;
+}
+
+li {
+    list-style: none;
+}
+
+.form-group {
+    margin-bottom: 25px;
+}
+
+
+table tbody td>input{
+	text-align:center;
+}
+
+.navbar-default .navbar-nav > li > a {
+    color: #333;
+}
+
+.navbar-default .navbar-nav > li > a:hover {
+    color: #2b97f7;
+    font-weight:600;
+}
+
+.navbar-default .navbar-nav > li.active > a {
+    color: #2b97f7;
+}
+
+/***************table Template 基本样式**********************************************/
+table {
+    text-align: center;
+    border: 1px solid #ddd;
+}
+
+table th {
+    text-align: center;
+}
+
+.table {
+    width: 100%;
+    height: auto;
+    background: #fff;
+    padding-bottom: 100px;
+}
+
+.table-template {
+    width: 100%;
+    overflow: hidden;
+    padding: 0 30px 30px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    background: #fff;
+}
+
+.table-template .table-info {
+    width: 100%;
+    height: 50px;
+    line-height: 30px;
+    padding: 15px 0px;
+}
+
+.table-template .table-info .table-title {
+    font-size: 16px;
+    overflow: hidden;
+}
+
+.table-template .table-info .table-title:before {
+    display: inline-block;
+    content: "|";
+    font-size: 24px;
+    color: #2b97f7;
+    padding-right: 5px;
+}
+
+
+
+.table-template .searchContent {
+    width: 100%;
+    height: 150px;
+    display: none;
+}
+
+.table-template .input-group {
+    margin-top: 20px;
+    margin-right: 35px;
+}
+
+.table-template .searchBtn {
+    display: block;
+    width: 73px;
+    margin-top: 20px;
+   
+}
+
+.table-template .addSpan {
+	display:block;
+    width: 200px;
+    height: auto;
+    float: right;
+    margin-bottom:10px;
+}
+
+.table-template .addSpan span {
+    display: block;
+    width: 50px;
+    height: 30px;
+    font-size: 14px;
+    line-height: 30px;
+    color: #2b97f7;
+    cursor: pointer;
+    font-weight: 400;   
+}
+.table-template .addSpan .add-btn{	
+	width:73px;
+	
+}
+
+.table-template .table-switch {
+    margin-top: 20px;
+    left: 50%;
+    margin-left: -65px;
+}
+
+.table-template .table-content {
+    width: 100%;
+}
+
+.table-template .tabTable {
+    display: none;
+}
+
+.table-template .tabTable.cur {
+    display: table;
+}
+
+.panel {
+    width: 100%;
+    height: auto;
+    padding-bottom: 100px;
+    background: #fff;
+}
+
+/*************************登录************************************/
+
+.login-info {
+    height: 30px;
+    background: #444;
+    color: #fff;
+    line-height: 30px;
+}
+
+.login-info a {
+    color: #fff;
+}
+
+.login-info .navbar-collapse {
+    padding: 0 15px;
+}
+
+.logo a {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    background: url("../build/img/logo.png");
+    -webkit-background-size: contain;
+    background-size: contain;
+}
+
+.logo span {
+    display: inline-block;
+    height: 50px;
+    line-height: 50px;
+    margin: 0 -50px 0 10px;
+}
+
+.loan-info {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 100%;
+    height: 100px;
+}
+
+.loan-info dl {
+    width: 16%;
+    height: 100%;
+    line-height: 40%;
+    float: left;
+    padding: 20px;
+    margin-right: 5%;
+    background: #fff;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.loan-info dl dt {
+    padding-bottom: 20px;
+}
+
+.loan-info dl.last-dl {
+    margin-right: 0;
+}
+
+/*bootstrap 覆盖样式*/
+@media (min-width:1400px){
+    .container{width:1320px}
+}
+@media (min-width:1600px){
+    .container{width:1460px}
+}
+.container {
+    padding-left: 0;
+    padding-right: 0;
+}
+.navbar-form{
+	padding:10px 0;
+}
+
+/*覆盖bootstrap的分页样式*/
+.loss-mangement .pagination{
+    margin-top: 0;
+}
+
+nav ul li.active a{
+    color: #2b97f7;
+    font-weight: 600;
+    background: #2b97f7;
+}
+
+
+.navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:focus, .navbar-default .navbar-nav>.active>a:hover{
+    background: none;
+    color: #2b97f7;
+}
+
+.radio-inline+.radio-inline{
+    margin-left: -3px;
+}
+
+
+.navbar-toggle {
+    margin-right: -150px;
+}
+
+
+
+legend {
+    border-bottom: none;
+}
+
+.section2 {
+    margin-top: 45px;
+}
+
+.asset-info {
+    width: 50%;
+    height: 400px;
+    margin-top: 45px;
+    background: #fff;
+}
+
+.regulated-info {
+    width: 45%;
+    height: 400px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 0 10px;
+    margin-top: 45px;
+    background: #fff;
+}
+
+.regulated-info .regulated-info-header {
+    width: 100%;
+    height: 40px;
+    border-bottom: 1px solid #ccc;
+}
+
+.regulated-info .regulated-info-header .noteIcon {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    font-size: 24px;
+    margin-left: 28px;
+    color: #666;
+    line-height: 40px;
+    cursor: pointer;
+    position: relative;
+}
+
+.regulated-info .regulated-info-header .unread-num {
+    display: block;
+    width: 16px;
+    height: 16px;
+    line-height: 16px;
+    border-radius: 50%;
+    background: red;
+    color: #fff;
+    font-weight: 500;
+    position: absolute;
+    left: 16px;
+    top: 3px;
+    font-size: 14px;
+    text-align: center;
+}
+
+.regulated-info .regulated-info-header h5 {
+    margin: 0 10px;
+    padding: 0;
+    height: 40px;
+    line-height: 40px;
+    display: inline-block;
+}
+
+.regulated-info .regulated-info-header .unread {
+    line-height: 40px;
+    color: #2b97f7;
+    cursor: pointer;
+}
+
+.regulated-info .regulated-info-content {
+    width: 100%;
+    height: 320px;
+    padding: 10px 0;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.regulated-info .regulated-info-content ul li {
+    width: 100%;
+    height: 30px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    padding-left: 10px;
+    font-size: 12px;
+    color: #666;
+}
+
+.regulated-info .regulated-info-content ul li a {
+    display: inline-block;
+    width: 50%;
+    height: 30px;
+    line-height: 30px;
+    font-weight: normal;
+    font-size: 12px;
+    color: inherit;
+    overflow: hidden;
+}
+
+.regulated-info .regulated-info-content ul li .message-type {
+    width: 20%;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+}
+
+.regulated-info .regulated-info-content ul li .message-time {
+    width: 30%;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+}
+
+.regulated-info .regulated-info-footer {
+    width: 100%;
+}
+
+.regulated-info .pagination {
+    margin: 0;
+}
+
+.repayment {
+    width: 100%;
+    background: #fff;
+    margin-top: 45px;
+}
+
+/*登录注册*/
+.login-body {
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    background: url("../build/img/login.jpg");
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    -moz-background-size: cover;
+    -webkit-background-size: cover;
+    position: relative;
+}
+
+.login-body .login-box , .login-body .modify-pwd-box{
+    width: 800px;
+    height: 560px;
+    background: #fff;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-left: -400px;
+    margin-top: -350px;
+}
+
+ .error{
+    color: red; 
+}
+.login-box .error{   
+    line-height: 30px;
+}
+
+.chaImage-group{
+    height: 60px;
+    position: relative;
+}
+.chaImage-group .chaImage{
+    position: absolute;
+    right: 50px;
+    top: 0px;
+}
+.login-box .operate, .modify-pwd-box .operate{
+    margin-top: 50px;
+}
+.login-body .modify-pwd-box{
+    display: none;
+}
+
+.login-box .row ,modify-pwd-box .row {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.login-box h3, .modify-pwd-box h3 {
+    margin: 10px;
+    height: 60px;
+    line-height: 60px;
+    font-size: 24px;
+    border-bottom: 1px solid #000;
+}
+
+.login-box .login-content, .modify-pwd-box .login-content{
+    width: 600px;
+    height: auto;
+    margin: 45px auto 0;
+    text-align: center;
+}
+
+.login-box .form-control ,.modify-pwd-box .form-control {
+    width: 40%;
+}
+
+.login-box .form-group , .modify-pwd-box .form-group {
+    margin-top: 35px;
+    text-align: center;
+}
+
+.login-box .form-group span, .modify-pwd-box .form-group span {
+    width: 100px;
+    height: 34px;
+    margin-left: 100px;
+    margin-right: 20px;
+    display: inline-block;
+    line-height: 34px;
+    text-align: right;
+}
+
+.login-box .chaImage , .modify-pwd-box .chaImage{
+    width: 85px;
+    height: 34px;
+    margin-left: -40px;
+    vertical-align: middle;
+    cursor: pointer;
+}
+
+.login-box .login-btn , .modify-pwd-box .login-btn{
+    width: 40%;
+    line-height: 34px;
+    margin-top: -45px;
+    text-align: center;
+    font-size: 18px;
+    margin-right: -60px;
+}
+
+.login-box .modify-pwd , .modify-pwd-box .return-login {
+    margin-right: 142px;
+    cursor: pointer;
+}
+
+.login-box .modify-pwd a , .modify-pwd-box .return-login a{
+    color: #666;
+}
+
+.login-box .modify-pwd:hover {
+    color: #2D93CA;
+}
+
+/*************************监管消息****************************************/
+
+/*************************c财务数据样式***********************/
+/*.finance-content {
+    width: 100%;
+    height: 350px;
+    background: #fff;
+    margin-top: 30px;
+    overflow: hidden;
+}
+
+.finance-content .finance-content-left {
+    width: 12%;
+    height: 350px;
+    float: left;
+    position: relative;
+    z-index: 2;
+    background: #fff;
+    border-right: 1px solid #ddd;
+}
+
+.finance-content .finance-content-right {
+    width: 88%;
+    height: 350px;
+    float: left;
+    position: relative;
+    overflow: hidden;
+}
+
+.finance-content-left button {
+    width: 100px;
+    height: 30px;
+    text-align: center;
+    margin: 10px 10px 10px 20px;
+    border-radius: 0px;
+}
+
+.finance-content-left button.first {
+    margin-top: 50px;
+}
+
+.finance-content-left button.active {
+    background: #2b97f7;
+    color: #fff;
+}
+
+.finance-content .finance-content-left ul {
+    width: 102px;
+    height: 32px;
+    margin-left: 20px;
+    margin-top: 108px;
+    display: none;
+}
+
+.finance-content .finance-content-left ul li {
+    width: 50px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    float: left;
+    border: 1px solid #ddd;
+}
+
+.finance-content .finance-content-left ul li.active {
+    background: #2b97f7;
+}
+
+.finance-content .finance-content-right .financial-char {
+    width: 2000px;
+    height: 280px;
+    color: #fff;
+    font-size: 14px;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.finance-content .finance-content-right .scroll-box {
+    width: 100%;
+    height: 30px;
+    background: #e8e8e8;
+    position: absolute;
+    left: 0;
+    top: 300px;
+}
+
+.finance-content .finance-content-right .scroll-bar {
+    width: 100px;
+    height: 100%;
+    background-color: #666;
+    border-radius: 5px;
+    cursor: pointer;
+    position: absolute;
+    left: 0;
+    top: 0;
+}*/
+.finance{
+    width: 100%;
+    overflow: hidden;
+    background: #fff;
+    padding-top: 30px;
+    padding-left: 15px;
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
+
+}
+.financial-char {
+    width: 1300px;
+    height: 400px;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+.finance-left{
+    width: 100px;
+    height: 400px;
+    background: #fff;
+    float: left;
+}
+.finance-left>button{
+    margin-top: 20px;
+}
+
+.finance-data-box {
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+}
+
+.finance-data-box .finance-data {
+    width: 2000px;
+    height: auto;
+    display: none;
+}
+
+.finance-data-box .finance-data.active {
+    display: block;
+}
+
+.finance-data-box .finance-data .profit {
+    display: none;
+}
+
+.finance-data-box .finance-data .profit.active {
+    display: block;
+}
+
+.finance-data .table-head {
+    padding-right: 17px;
+    color: #000;
+}
+
+.finance-data .table-body {
+    width: 100%;
+    height: 400px;
+    overflow-y: scroll;
+}
+
+.finance-data .table-head table, .finance-data .table-body table {
+    width: 100%;
+    text-align: center;
+    margin: 0;
+}
+
+.finance-data .table-head table th {
+    padding: 8px;
+}
+
+.finance-data .table-body table td {
+    padding: 8px;
+}
+
+/*********************注册信息*********************************************/
+.register-info {
+    width: 100%;
+    height: 620px;
+    background: #fff;
+}
+
+.register-info .table > thead > tr > th, .register-info .table > tbody > tr > td {
+    padding: 0 2%;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    text-align: left;
+    height: 47px;
+    line-height: 47px;
+}
+
+.register-info .accessory {
+    width: 100%;
+    height: 145px;
+}
+
+.register-info .accessory li {
+    width: 24%;
+    height: 145px;
+    float: left;
+}
+
+.register-info .accessory li a {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    margin-right: 1%;
+}
+
+.register-info .accessory li a img {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+}
+
+/*修改注册资料表单*/
+.modify-reg-info {
+    width: 100%;
+    height: 1000px;
+    background: #fff;
+}
+
+.modify-reg-info legend {
+    padding: 20px;
+    text-align: center;
+}
+
+.modify-reg-info legend p {
+    font-size: 12px;
+}
+
+.modify-reg-info legend p span {
+    color: red;
+    font-size: 18px;
+    position: relative;
+    top: 7px;
+}
+
+.form-group .required:after {
+    display: inline-block;
+    content: '*';
+    color: hotpink;
+    font-size: 18px;
+    line-height: 0;
+    position: absolute;
+    right: -20px;
+    top: 20px;
+}
+
+.modify-reg-info .form-group .business_address.required:after {
+    right: -104.5%;
+}
+
+.business_scope textarea {
+    resize: none;
+    width: 64%;
+    height: 100px;
+    margin-left: 20px;
+    border: 1px solid #ddd;
+}
+
+.modify-reg-info .add-file > div {
+    border: 1px solid #ddd;
+    width: 100%;
+    height: 100px;
+}
+
+.modify-reg-info .form-group .business_scope.required:after {
+    right: -30px;
+    top: -45px;
+}
+
+.business_scope div {
+    width: 100%;
+    height: 100px;
+    border: 1px solid #ddd;
+}
+
+.accessory {
+    width: 64%;
+    height: 100px;
+    margin-left: 20px;
+    border: 1px solid #ddd;
+}
+
+.modify-reg-info .form-group .add-file.required:after {
+    right: -105%;
+    top: -45px;
+}
+
+.form-group label {
+    font-weight: normal;
+}
+
+/*添加股东表单*/
+.add_shareholder {
+    width: 100%;
+    height: 1000px;
+    background: #fff;
+}
+
+.add_shareholder legend {
+    padding: 20px;
+    text-align: center;
+}
+
+.add_shareholder p span {
+    color: red;
+    font-size: 18px;
+    position: relative;
+    top: 7px;
+}
+
+.add_shareholder form {
+    display: none;
+}
+
+.add_shareholder form.cur {
+    display: block;
+}
+
+table tbody > tr > td input {
+    width: 65%;
+    height: 30px;
+    line-height: 30px;
+    font-size: 14px;
+    border: 1px solid #ddd;
+}
+
+table tbody > tr > td i {
+    position: relative;
+    left: -25px;
+    top: 3px;
+    color: #2b97f7;
+}
+
+.add_shareholder .form-group .addon-outer {
+    position: relative;
+}
+
+.add_shareholder .form-group .addon{
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+/*********************股东信息*********************************************/
+.shareholder-info {
+    width: 100%;
+    margin-top: 30px;
+    background: #fff;
+}
+
+/*********************员工信息*********************************************/
+.employee-info {
+    width: 100%;
+    margin-top: 30px;
+    background: #fff;
+}
+
+.contract-table {
+    width: 100%;
+    background: #fff;
+}
+
+.add_shareholder .table-template {
+    padding-bottom: 30px;
+}
+
+.add_shareholder .corporate_shareholder .form-group.last {
+    width: 100%;
+    height: 80px;
+    margin-left: 0px;
+    background: #fff;
+}
+
+/*********************融资表格*********************************************/
+.finance-table {
+    width: 100%;
+    height: auto;
+    background: #fff;
+    padding-bottom: 100px;
+    clear: both;
+    overflow: hidden;
+
+}
+
+/*添加融资数据*/
+.add-finance-data h3 {
+    padding: 20px;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    margin:30px 0 30px 100px;
+
+}
+
+.add-finance-data form {
+    width: 600px;
+    margin: 0 auto;
+}
+
+.add-finance-data .input-group {
+    margin-top: 20px;
+}
+
+.add-finance-data .input-group.date {
+    padding: 0 10%;
+    position: static;
+}
+
+.add-finance-data .input-group.date input {
+    width: 70%;
+}
+
+.add-finance-data .input-group.date .date-icon {
+    position: relative;
+    right: 20px;
+    top: 10px;
+    z-index: 2;
+    color: #2b97f7;
+}
+
+.add-finance-data .form-group.btn {
+    margin-top: 20px;
+}
+
+.add-finance-data .form-group.btn button {
+    padding: 10px 50px;
+    margin: 0 28px;
+}
+
+/*********************账户信息*********************************************/
+.account-table {
+    width: 100%;
+    height: auto;
+    background: #fff;
+}
+
+/*********************贷款结构信息*********************************************/
+.lossTable {
+    width: 100%;
+    height: 100px;
+    padding: 30px;
+}
+
+.lossTable .selectMooth {
+    line-height: 40px;
+}
+
+.lossTable .selectMooth .month-select {
+    border: 1px solid #ddd;
+    padding-left: 10px;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+.lossTable .selectMooth .month-select input {
+    width: 200px;
+    height: 40px;
+    font-size: 16px;
+}
+
+.lossTable .selectMooth .month-select .calendarIcon {
+    position: relative;
+    right: 10px;
+    top: 12px;
+    font-size: 14px;
+    color: #2b97f7;
+}
+
+.lossTable .selectMooth .search-icon {
+    font-size: 32px;
+    color: #2b97f7;
+    margin-left: 20px;
+    cursor: pointer;
+}
+
+.loan-box {
+    width: 100%;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 0 5%;
+    background: #fff;
+}
+
+.loan-table {
+    width: 100%;
+    height: auto;
+}
+
+.loan-table h3 {
+    width: 100%;
+    text-align: center;
+}
+
+.loan-table tbody > tr > td.main-content {
+    text-align: left;
+    font-weight: 600;
+    padding-left: 20px;
+}
+
+/*********************资产损失准备计提*********************************************/
+.capital-loss-box, .add-capital-loss-box {
+    width: 100%;
+    padding: 30px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    background: #fff;
+}
+
+.capital-table {
+    width: 100%;
+    text-align: center;
+}
+
+.add-capital-loss-box h3 {
+    padding: 20px;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.add-capital-loss-box .lossTable {
+    width: 440px;
+    margin-left: 400px;
+}
+
+.add-capital-loss-box .add-asset {
+    margin: 0 auto;
+}
+
+/*********************还款与展期*********************************************/
+
+/*合同查看*/
+.contract-view {
+    width: 100%;
+    height: auto;
+    background: #fff;
+    margin-top: 30px;
+    padding: 0px 30px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.contract-view .contract-view-header h2 {
+    height: 50px;
+    font-size: 24px;
+    padding-top: 30px;
+    margin-bottom: 10px;
+}
+
+.contract-view ul {
+    width: 100%;
+    height: auto;
+    margin-top: 30px;
+    overflow: hidden;
+}
+
+.contract-view>ul>li {
+    width: 12.5%;
+    height: 45px;
+    line-height: 45px;
+    float: left;
+    background: #e4e4e4;
+    color: #000;
+    text-align: center;
+    cursor: pointer;
+}
+.contract-view>ul>li.active {
+    background: #2b97f7;
+    color: #fff;
+}
+.contract-view .contract-content .contract-view-table {
+    margin-top: 30px;
+    display: none;
+}
+
+.contract-view .contract-content .contract-view-table.active {
+    display: block;
+}
+
+/*合同数据*/
+.table-template .contract-search {
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+}
+
+.table-template .contract-search .form-group .input-group {
+    width: 45%;
+    padding: 0 5%;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    position: relative;
+}
+
+.table-template .contract-search .form-group .input-group.loan-term {
+    width: 100%;
+}
+
+.table-template .contract-search .form-group .input-group.loan-term .input-group-addon {
+    padding: 9px 12px;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1;
+    color: #555;
+    text-align: center;
+    background-color: #eee;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-right: 20px;
+}
+
+.table-template .contract-search .checkbox-inline, .radio-inline {
+    position: relative;
+    display: inline-block;
+    padding-left: 38px;
+    margin-bottom: 0;
+    font-weight: 400;
+    vertical-align: middle;
+    cursor: pointer;
+    top: 5px;
+}
+
+.table-template .contract-search .form-group .input-group.date .date-icon1 {
+    position: absolute;
+    right: 218px;
+    top: 10px;
+    z-index: 2;
+    cursor: pointer;
+    color: #2D93CA;
+}
+
+.table-template .contract-search .form-group .input-group.date .date-icon2 {
+    position: absolute;
+    right: 14%;
+    top: 10px;
+    z-index: 2;
+    cursor: pointer;
+    color: #2D93CA;
+}
+
+.table-template .contract-search .form-group .input-group input.date {
+    width: 48%;
+}
+
+.table-template .contract-search .form-group .input-group .parting-line {
+    line-height: 34px;
+    margin: 0 2px;
+}
+
+/*添加贷款合同*/
+
+.add_loan_contract .step{
+    width: 100%;
+    height: 40px;
+    margin:30px 0 60px;
+}
+
+.add_loan_contract .step li{
+    width: 33.3%;
+    height: 45px;
+    line-height: 45px;
+    font-size:20px;
+    font-weight:blod;
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
+    float: left;
+    border: 2px solid #ddd;
+    text-align: center;
+}
+
+.add_loan_contract .step li.active{
+    background: #2b97f7;
+}
+
+.add_loan_contract .fieldset{
+    display: none;
+}
+
+.add_loan_contract .lenderType{
+    display: none;
+}
+
+.add_loan_contract .lenderType.active{
+    display: block;
+}
+
+.add_loan_contract .fieldset.active{
+    display: block;
+}
+
+.add_loan_contract .title {
+    padding: 20px 0;
+}
+
+.add_loan_contract .title:before {
+    display: inline-block;
+    content: "|";
+    font-size: 24px;
+    color: #2b97f7;
+    padding-right: 5px;
+}
+
+.add_loan_contract form {
+    clear: both;
+}
+
+.add_loan_contract form .input-group.date {
+    position: relative;
+}
+
+.add_loan_contract form .input-group.date .date-icon1{
+    position: absolute;
+    right: 100px;
+    top: 10px;
+    z-index: 2;
+    color: #2b97f7;
+}
+
+.add_loan_contract form .input-group.date .date-icon {
+    position: absolute;
+    right: 100px;
+    top: 10px;
+    z-index: 2;
+    color: #2b97f7;
+}
+
+.add_loan_contract form .input-group.date input.rate {
+    width: 60px;
+}
+
+.repayment-plan table input {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 0 30%;
+    width: 60%;
+    margin: 0 auto;
+}
+
+.repayment-plan table .date {
+    position: relative;
+}
+
+.repayment-plan table .date .date-icon {
+    position: absolute;
+    right: 80px;
+    top: 18px;
+    color: #2b97f7;
+}
+
+.repayment-plan table td a {
+    position: relative;
+    top: 5px;
+}
+
+.repayment-plan h5 {
+    font-size: 14px;
+    clear: both;
+    width: 100%;
+    height: 20px;
+    text-align: left;
+    line-height: 20px;
+    font-weight: bold;
+}
+
+.loan-mode table {
+    margin-top: 0;
+}
+
+.loan-mode .loan-style{
+    width: 100%;
+    height: 40px;
+    padding:0 0 0 8%;
+    margin-left: -20px;
+    margin-bottom: 30px;
+}
+
+.loan-mode .loan-style .select{
+    position: relative;
+    left: -10px;
+    top: 5px;
+}
+
+/*报损业务管理*/
+
+.add-form .input-group{
+    margin-top: 0;
+}

@@ -1,0 +1,32 @@
+﻿.parentFileBox{position:relative;overflow:hidden;width:auto;height:auto}
+.parentFileBox>.fileBoxUl{position:relative;overflow:hidden;padding-bottom:5px;padding-left:0;width:100%;height:auto}
+.parentFileBox>.fileBoxUl>li{position:relative;float:left;overflow:hidden;margin-top:5px;margin-left:5px;border:1px solid #ddd;border-radius:4px;background-color:#fff}
+.parentFileBox>.fileBoxUl>li>.viewThumb{overflow:hidden;vertical-align:middle;text-align:center}
+.parentFileBox>.fileBoxUl>li>.viewThumb>img{width:100%;height:100%}
+.parentFileBox>.fileBoxUl>li>.diyCancel,.parentFileBox>.fileBoxUl>li>.diySuccess{z-index:999;position:absolute;top:5px;right:2px;display:none;width:40px;height:35px;cursor:pointer}
+.parentFileBox>.fileBoxUl>li>.diyCancel{background:url(x_alt.png) no-repeat}
+.parentFileBox>.fileBoxUl>li>.diySuccess{background:url(check_alt.png) no-repeat;cursor:default}
+.parentFileBox>.fileBoxUl>li>.diyFileName{position:absolute;bottom:0;left:0;display:none;width:100%;height:30px;background:url(bgblack.png);color:#fff;text-align:center;font-size:12px;line-height:30px}
+.parentFileBox>.fileBoxUl>li>.diyBar{position:absolute;top:0;left:0;display:none;width:150px;height:150px;background:url(bgblack.png);line-height:150px}
+.parentFileBox>.fileBoxUl>li>.diyBar>.diyProgressText{position:relative;z-index:99;color:#FFF;text-align:center;font-size:14px}
+.parentFileBox>.fileBoxUl>li>.diyBar>.diyProgress{position:absolute;top:42%;left:0;z-index:97;width:100%;height:24px;background-color:#09F;opacity:.7;filter:alpha(opacity=70);-moz-opacity:.7}
+.parentFileBox>.diyButton{margin-top:5px;margin-bottom:5px;width:100%;height:20px;line-height:20px}
+.parentFileBox>.diyButton>a{padding:5px 10px 5px 10px;border-radius:3px;background-color:#09C;color:#FFF;text-decoration:none;font-size:12px}
+.parentFileBox>.diyButton>a:hover{background-color:#008bbc;color:#fff}
+.parentFileBox>.fileBoxUl>.diyUploadHover:hover .diyCancel{display:block}
+.parentFileBox>.fileBoxUl>li:hover .diyFileName{display:block}
+.avi_diy_bg,.txt_diy_bg,.doc_diy_bg,.zip_diy_bg,.csv_diy_bg,.xls_diy_bg,.mp3_diy_bg,.pdf_diy_bg,.rar_diy_bg{background-position:center;background-repeat:no-repeat}
+.avi_diy_bg{background-image:url(filebg/avi.png)}
+.txt_diy_bg{background-image:url(filebg/txt.png)}
+.doc_diy_bg{background-image:url(filebg/doc.png)}
+.zip_diy_bg{background-image:url(filebg/zip.png)}
+.csv_diy_bg{background-image:url(filebg/csv.png)}
+.xls_diy_bg{background-image:url(filebg/xls.png)}
+.mp3_diy_bg{background-image:url(filebg/mp3.png)}
+.pdf_diy_bg{background-image:url(filebg/pdf.png)}
+.rar_diy_bg{background-image:url(filebg/rar.png)}
+.webuploader-container{position:relative}
+.webuploader-element-invisible{position:absolute!important;clip:rect(1px 1px 1px 1px);clip:rect(1px,1px,1px,1px)}
+.webuploader-pick{position:relative;display:inline-block;overflow:hidden;padding:6px 12px;border-radius:3px;background:#27c24c;color:#fff;text-align:center;cursor:pointer}
+.webuploader-pick-hover{background:#23ad44}
+.webuploader-pick-disable{opacity:.6;pointer-events:none}

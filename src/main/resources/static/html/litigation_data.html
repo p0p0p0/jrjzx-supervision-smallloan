@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>诉讼数据</title>
+    <link href="static/build/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="static/build/lib/layer/skin/layer.css">
+    <link rel="stylesheet" href="static/css/style.css">
+    <link href="favicon.ico" rel="shortcut icon" type="image/x-icon" />
+
+</head>
+
+<body>
+
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="login-info clearfix">
+        <div class="container">
+            <span class="pull-left get-date"> </span>
+            <div class="pull-right">
+                <span class="pull-right navbar-collapse">帮助中心</span>
+                <div class="pull-right">
+                    您好<a href="#">  ${sessionScope.loginUser.username}</a>
+                    <span>|</span>
+                    <a href="javascript:bootbox.confirm('你确定要注销当前用户吗?',function(e){if(e)window.location='/user/logout'})">注销</a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="navbar-header">
+            <button  type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                     data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <div class="navbar-header logo">
+                <a href="/" class="pull-left"></a>
+                <span class="pull-left" style="cursor: pointer;" onclick="javascript:window.location='/';">金融街在线监控平台</span>
+            </div>
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <div id="menus">
+                <ul class="nav navbar-nav pull-right">
+                    <li><a href="index.html">主页</a></li>
+                    <li><a href="base_data.html">基础数据</a></li>
+                    <li><a href="financial_data.html">财务数据</a></li>
+                    <li><a href="contract_data.html">合同数据</a></li>
+                    <li><a href="financing.html">融资数据</a></li>
+                    <li><a href="account_data.html">账户数据</a></li>
+                    <li><a href="loan_structure.html">贷款结构</a></li>
+                    <li><a href="capital_loss_count.html">资产损失准备计提</a></li>
+                    <li><a href="loss_management.html" style="padding-right: 0;">报损业务管理</a></li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+</nav>
+
+<div class="container pt100">
+    <div class=" panel loss-mangement">
+
+        <div class="table-template">
+            <div class="table-info">
+                <h4 class="table-title pull-left">诉讼数据</h4>
+            </div>
+            <div class="addSpan">
+                <a href="" id="add-litigation-data">添加</a>
+            </div>
+            <div class="table-content">
+                <table id="litigation-data"></table>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<script src="static/build/lib/jquery.min.js"></script>
+<script src="static/build/lib/sea.min.js"></script>
+<script src="static/build/js/base.min.js"></script>
+<script src="static/build/lib/bootstrap-table/bootstrap-table.min.js"></script>
+<script src="static/build/lib/bootstrap-table/bootstrap-table-zh-CN.min.js" defer></script>
+
+<script>
+    $(function () {
+        seajs.use('common',function (c) {
+            c.navInit();
+        });
+        seajs.use('litigationData',function (l) {
+            l.litigationData();
+        });
+
+    })
+</script>
+
+
+
+</body>
+</html>

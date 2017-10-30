@@ -1,0 +1,44 @@
+[
+  {
+    "loanContractNum": "11111s11112222aa",
+    "reportedDate": "2016-02-03",
+    "loanDate": "2016-02-03",
+    "borrower": "互联网服务",
+    "amount": "2222222",
+    "timeLimit": "12 个月",
+    "annualRate": "12.01%",
+    "balance": "1,000,000.00",
+    "isRollOver": "否",
+    "state": "已结清",
+    "operation": ""
+  },
+  {
+    "loanContractNum": "11111s11112222aa",
+    "reportedDate": "2016-02-03",
+    "loanDate": "2016-02-03",
+    "borrower": "互联网服务",
+    "amount": "2222222",
+    "timeLimit": "12 个月",
+    "annualRate": "12.01%",
+    "balance": "1,000,000.00",
+    "isRollOver": "否",
+    "state": "已结清",
+    "operation": ""
+  },
+  {
+    "loanContractNum": "11111s11112222aa",
+    "reportedDate": "2016-02-03",
+    "loanDate": "2016-02-03",
+    "borrower": "互联网服务",
+    "amount": "2222222",
+    "timeLimit": "12 个月",
+    "annualRate": "12.01%",
+    "balance": "1,000,000.00",
+    "isRollOver": "否",
+    "state": "已结清",
+    "operation": ""
+  }
+
+
+
+]

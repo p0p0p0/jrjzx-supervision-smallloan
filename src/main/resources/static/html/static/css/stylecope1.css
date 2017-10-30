@@ -1,0 +1,652 @@
+body{
+
+    padding-top: 81px;
+    background-color: rgba(245, 247, 250, 1);
+}
+a{
+    color: #000;
+    text-decoration: none;
+    font-weight: bold;
+}
+li{
+    list-style: none;
+}
+/***************table Template 基本样式**********************************************/
+table th{
+    text-align: center;
+}
+.table-template {
+    width: 100%;
+    padding: 0 15px;
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
+}
+.table-template .table-info {
+    width: 100%;
+    height: 30px;
+    line-height: 30px;
+    padding: 15px 0px;
+
+}
+.table-template .table-info .table-title{
+    font-size: 16px;
+    margin: 0;
+    padding: 0;
+}
+.table-template .table-info .table-title:before{
+    display: inline-block;
+    content: "|";
+    font-size:24px;
+    color: rgba(51,204,255,1);
+    padding-right: 5px;
+}
+.table-template .table-info .searchSpan{
+    display: inline-block;
+    height: 30px;
+    line-height: 30px;
+    font-size: 15px;
+    color: #8f949a;
+    letter-spacing: 2px;
+    cursor: pointer;
+}
+.table-template .searchContent{
+    width: 100%;
+    margin-top: 10px;
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
+    height: 150px;
+    background: skyblue;
+    display: none;
+}
+.table-template .input-group{
+    margin-top: 20px;
+    margin-right:20px;
+}
+.table-template  .searchBtn{
+    display: block;
+    width: 100px;
+    margin-top: 20px;
+    margin-right: 110px;
+}
+.table-template .addSpan{
+    width: 100%;
+    height: 30px;
+}
+.table-template .addSpan span{
+    display: block;
+    width: 50px;
+    height: 30px;
+    font-size: 14px;
+    line-height: 30px;
+    color: rgba(51,204,255,1);
+    cursor: pointer;
+    font-weight: 400;
+}
+.table-template .table-switch{
+    margin-top: 20px;
+    left: 50%;
+    margin-left:-65px;
+}
+.table-template .table-content{
+    width: 100%;
+}
+.table-template table{
+    display: none;
+}
+.table-template table.cur{
+    display: table;
+}
+
+/*************************************************************/
+
+.container{
+    padding-left: 0;
+    padding-right: 0;
+}
+.login-info{
+    height: 30px;
+    background: #333;
+    color: #fff;
+    line-height: 30px;
+}
+.logo a{
+    display: inline-block;
+    width: 60px;
+    height: 50px;
+    background: url("../build/img/logo.png");
+    -webkit-background-size: contain;
+            background-size: contain;
+}
+.logo span{
+    display: inline-block;
+    height: 50px;
+    line-height: 50px;
+    margin:0 100px 0 10px;
+}
+.loan-info{
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
+    width: 100%;
+    height: 100px;
+    margin-top: 90px;
+}
+.loan-info dl{
+    width: 16%;
+    height: 100%;
+    line-height: 40%;
+    float: left;
+    padding:20px;
+    margin-right:5%;
+    background: #fff;
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
+    text-align: center;
+}
+.loan-info dl dt{
+    padding-bottom:20px;
+}
+.loan-info dl.last-dl{
+    margin-right: 0;
+}
+.section2{
+    margin-top:45px;
+}
+.asset-info{
+    width: 50%;
+    height: 400px;
+    background: #fff;
+}
+.regulated-info{
+    width: 45%;
+    height: 400px;
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
+    padding:0 10px;
+    background: #fff;
+}
+.regulated-info .regulated-info-header{
+    width: 100%;
+    height: 40px;
+    border-bottom: 1px solid #ccc;
+}
+.regulated-info .regulated-info-header .noteIcon{
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    background: #666;
+    line-height: 40px;
+    cursor: pointer;
+}
+.regulated-info .regulated-info-header h5{
+    margin: 0 10px;
+    padding: 0;
+    height: 40px;
+    line-height: 40px;
+    display: inline-block;
+}
+.regulated-info .regulated-info-header .unread{
+    line-height: 40px;
+    color: rgb(54,163,255);
+    cursor: pointer;
+}
+.regulated-info .regulated-info-content{
+    width: 100%;
+    height: 320px;
+    padding: 10px 0;
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
+}
+.regulated-info .regulated-info-content ul li{
+    width: 100%;
+    height: 30px;
+    margin-left: -10px;
+    font-size: 12px;
+    color: #666;
+}
+.regulated-info .regulated-info-content ul li a{
+    display: inline-block;
+    width: 50%;
+    height: 30px;
+    line-height:30px;
+    font-weight: normal;
+    font-size: 12px;
+    color: #666;
+    overflow: hidden;
+}
+.regulated-info .regulated-info-content ul li  .message-type{
+    width: 20%;
+    height: 30px;
+    line-height:30px;
+    text-align: center;
+}
+.regulated-info .regulated-info-content ul li  .message-time{
+    width: 30%;
+    height: 30px;
+    line-height:30px;
+    text-align: center;
+}
+.regulated-info .regulated-info-footer{
+    width: 100%;
+}
+.regulated-info .pagination{
+    margin: 0;
+}
+
+
+.repayment{
+    width: 100%;
+    height: 1200px;
+    background: #fff;
+}
+
+/*登录注册*/
+.login-box{
+    margin-top: 60px;
+    width: 100%;
+    height: 530px;
+    background: #fff;
+   
+}
+.login-box .row{
+    margin-left: 0;
+    margin-right: 0;
+}
+.login-box h3{
+    margin: 10px;
+    height: 60px;
+    line-height: 60px;
+    font-size: 24px;
+    border-bottom: 1px solid #000;
+}
+.login-content{
+    width: 600px;
+    height: auto;
+    margin: 45px auto 0;
+
+    text-align: center;
+}
+.login-box .form-control{
+    width: 40%;
+}
+.login-box .form-group{
+    margin-top: 40px;
+    text-align: center;
+}
+.login-box .form-group span{
+    width: 100px;
+    height: 34px;
+    /*background: #999;*/
+    margin-left: 100px;
+    margin-right: 20px;
+    display: inline-block;
+    line-height: 34px;
+    text-align: right;
+}
+.login-box  #chaImage{
+    width: 60px;
+    height: 34px;
+    margin-left: -60px;
+    vertical-align: middle;
+}
+.login-box  .panel-tips{
+    width: 200px;
+    height: 24px;
+    font-size: 14px;
+    color: red;
+   margin:  20px 235px 0;
+
+}
+.login-box .login-btn{
+    width: 40%;
+    line-height: 34px;
+    margin-top: -45px;
+    letter-spacing: 20px;
+    margin-right: -60px;
+}
+.login-box  .modify-pwd{
+    margin-right: 142px;
+    cursor: pointer;
+
+}
+.login-box  .modify-pwd a{
+    color: #666;
+}
+.login-box  .modify-pwd:hover{
+    color: #2D93CA;
+}
+
+/*************************监管消息****************************************/
+
+
+/*************************c财务数据样式***********************/
+.financialBox{
+    position: relative;
+    height:auto;
+    border: 30px solid #fff;
+    background: #fff;
+    margin-top: 50px;
+    overflow: hidden;
+}
+.financial-data-left{
+    width: 12%;
+    height: auto;
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
+    background: #666;
+    position: relative;
+    left: 0;
+    top: 0;
+    z-index: 1;
+}
+.financial-data-left .table-main{
+    width: 100%;
+    height: auto;
+    background: #999;
+}
+.financial-data-left .table-main table td{
+    height: 45px;
+}
+.financial-data-left .table-main table{
+    display: none;
+}
+.financial-data-left .table-main table.cur{
+    display: table;
+}
+.financial-data-left .table-btn{
+    width: 100%;
+    height: 350px;
+    background: #444;
+}
+
+.financial-data-left .table-btn button{
+    width: 100px;
+    height: 30px;
+    text-align: center;
+    margin: 10px 0 10px 10px;
+    border-radius: 0px;
+}
+.financial-data-right{
+    width: 88%;
+    min-height: 350px;
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
+    position: relative;
+}
+.financial-char{
+    width: 2000px;
+    height: 280px;
+    color: #fff;
+    font-size: 14px;
+    position: absolute;
+    left: 0;
+    top: 10px;
+}
+.scroll-box{
+    width: 100%;
+    height: 30px;
+    background: #e8e8e8;
+    padding-left: 135px;
+    position: absolute;
+    left: 0;
+    top: 310px;
+}
+.scroll-bar{
+    width: 100px;
+    height: 100%;
+    background-color: #666;
+    border-radius: 5px;
+    cursor: pointer;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+.financial-table{
+    width: 2000px;
+    height: auto;
+    margin-top: 350px;
+}
+.table>thead:first-child>tr:first-child>th{
+    height: 45px;
+}
+.financial-table table td{
+    height: 45px;
+}
+.financial-table table{
+    display: none;
+}
+.financial-table table.cur{
+    display: table;
+}
+
+/*********************注册信息*********************************************/
+.register-info{
+    width: 100%;
+    height: 680px;
+    background: #fff;
+    margin-top: 30px;
+}
+.register-info .table>thead>tr>th,.register-info .table>tbody>tr>td{
+    padding: 0 2%;
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
+    text-align: left;
+    height: 47px;
+    line-height: 47px;
+}
+.register-info .accessory{
+    width: 100%;
+    height: 145px;
+}
+.register-info .accessory li{
+    width: 24%;
+    height: 145px;
+    float: left;
+}
+.register-info .accessory li a{
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    margin-right: 1%;
+}
+.register-info  .accessory li a img{
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+}
+/*修改注册资料表单*/
+.modify-reg-info{
+    width: 100%;
+    height: 1000px;
+    background: #fff;
+}
+.modify-reg-info legend{
+    padding: 20px;
+    text-align: center;
+}
+.modify-reg-info legend p{
+    font-size: 12px;
+}
+.modify-reg-info legend p span{
+    color: red;
+    font-size: 18px;
+    position: relative;
+    top: 7px;
+}
+.form-group .required:after{
+    display: inline-block;
+    content: '*';
+    color: red;
+    font-size: 18px;
+    line-height: 0;
+    position: relative;
+    right: -120%;
+    top: -20px;
+}
+ .form-group .business_address.required:after{
+    right: -104.5%;
+}
+ .business_scope textarea{
+    resize: none;
+    width: 64%;
+    height: 100px;
+    margin-left: 20px;
+    border: 1px solid #ddd;
+}
+ .business_scope div{
+    width: 100%;
+    height: 100px;
+    border: 1px solid #ddd;
+}
+ .accessory{
+    width: 64%;
+    height: 100px;
+    margin-left: 20px;
+    border: 1px solid #ddd;
+}
+ .form-group .business_scope.required:after{
+    right: -105%;
+    top: -45px;
+}
+ .form-group label{
+    font-weight:normal;
+}
+/*添加股东表单*/
+.add_shareholder{
+    width: 100%;
+    height: 1000px;
+    background: #fff;
+}
+.add_shareholder legend{
+    padding: 20px;
+    text-align: center;
+}
+.add_shareholder p span{
+    color: red;
+    font-size: 18px;
+    position: relative;
+    top: 7px;
+}
+.add_shareholder form{
+    display: none;
+}
+.add_shareholder form.cur{
+    display: block;
+}
+
+
+/*********************股东信息*********************************************/
+.shareholder-info{
+    width: 100%;
+    margin-top: 30px;
+    background: #fff;
+}
+/*********************员工信息*********************************************/
+.employee-info{
+    width: 100%;
+    margin-top: 30px;
+    background: #fff;
+}
+.contract-table{
+    width: 100%;
+    margin-top: 30px;
+    background: #fff;
+    padding-bottom: 100px;
+}
+
+/*********************融资表格*********************************************/
+.finance-table{
+    width: 100%;
+    height:auto;
+    background: #fff;
+    padding-bottom: 100px;
+}
+/*********************账户信息*********************************************/
+.account-table{
+    width: 100%;
+    height: 1000px;
+    margin-top: 30px;
+    background: #fff;
+}
+/*********************贷款结构信息*********************************************/
+
+.lossTable{
+    width: 100%;
+    height: 100px;
+    padding-left: 30px;
+    padding-top: 30px;
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
+}
+.selectMooth{
+    width: 100%;
+    height: 40px;
+    padding: 10px;
+    font-size: 16px;
+}
+.selectMooth .calendarIcon{
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
+    position: relative;
+    right: 76px;
+    font-size: 14px;
+    top: 12px;
+}
+.loan-box{
+    width: 100%;
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
+    padding:0 5%;
+    background: #fff;
+}
+.loan-table{
+    width: 100%;
+    height:auto ;
+}
+.loan-table h3{
+    width: 100%;
+    text-align: center;
+}
+.loan-table tbody>tr>td.main-content{
+    text-align: left;
+    font-weight: 600;
+    padding-left: 20px;
+}
+/*固定表头*/
+.fixedThead{
+    display: block;
+    width: 100%;
+
+}
+.scrollTbody{
+    display: block;
+    height: 600px;
+    overflow: auto;
+    width: 100%;
+    overflow-y: auto;
+}
+/*********************资产损失准备计提*********************************************/
+.capital-box{
+    width: 100%;
+    margin-top: 30px;
+    height: 600px;
+    background: #fff;
+}
+.capital-table{
+    width: 100%;
+}
+.capital-box h3{
+    padding: 20px;
+    text-align: center;
+}

@@ -1,0 +1,1503 @@
+
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>财务数据</title>
+    <link href="static/build/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <link rel="stylesheet" href="static/css/style.css">
+    <script src="static/build/lib/respond.min.js"></script>
+    <script src="static/build/lib/html5shiv.min.js"></script>
+
+
+</head>
+
+<body>
+<nav class="navbar navbar-default">
+    <div class="login-info clearfix">
+        <div class="container">
+            <span class="pull-left get-date"> </span>
+            <div class="pull-right">
+                <span class="pull-right navbar-collapse">帮助中心</span>
+                <div class="pull-right">
+                    <a href="login.html">用户名</a>
+                    <span>|</span>
+                    <a href="login.html">退出</a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="navbar-header">
+            <button  type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                     data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <div class="navbar-header logo">
+                <a href="#" class="pull-left"></a>
+                <span class="pull-left">金融街在线监控平台</span>
+            </div>
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav pull-right">
+                <li><a href="index.html">主页 <span class="sr-only">(current)</span></a></li>
+                <li><a href="base_data.html">基础数据</a></li>
+                <li class="active"><a href="finance_data.html">财务数据</a></li>
+                <li><a href="contract_data.html">合同数据</a></li>
+                <li><a href="financing.html">融资数据</a></li>
+                <li><a href="account_data.html">账户数据</a></li>
+                <li><a href="loan_structure.html">贷款结构</a></li>
+                <li><a href="capital_loss_count.html">资产损失准备计提</a></li>
+                <li><a href="loss_management.html" style="padding-right: 0;">报损业务管理</a></li>
+
+            </ul>
+
+        </div>
+    </div>
+</nav>
+
+<div class="container">
+    <div class="finance-content" >
+        <div class="finance-content-left">
+            <button class="btn btn-default first active" >资产负债表</button>
+            <button class="btn btn-default profit-btn" >利润表</button>
+            <button class="btn btn-default" >现金流量表</button>
+            <ul>
+                <li class="active">年度</li>
+                <li>月度</li>
+            </ul>
+        </div>
+        <div class="finance-content-right">
+            <div class="financial-char" id="financial-char"></div>
+            <div class="scroll-box" id="scroll-box">
+                <div class="scroll-bar" id="scroll-bar"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="finance-data-box">
+        <div class="finance-data-outBox" id="finance-data-outBox">
+            <div style="width: 2000px;" class="finance-data active" >
+                <div class="table-head">
+                    <table class="table table-hover table-bordered">
+                        <colgroup>
+                            <col style="width: 125px;"/><col/>
+                        </colgroup>
+                        <thead>
+                        <tr>
+                            <th>2012-01-01</th>
+                            <th>2012-01-01</th>
+                            <th>2012-01-01</th>
+                            <th>2012-01-01</th>
+                            <th>2012-01-01</th>
+                            <th>2012-01-01</th>
+                            <th>2012-01-01</th>
+                            <th>2012-01-01</th>
+                            <th>2012-01-01</th>
+                            <th>2012-01-01</th>
+                            <th>2012-01-01</th>
+                            <th>2012-01-01</th>
+                            <th>2012-01-01</th>
+                            <th>2012-01-01</th>
+                            <th>2012-01-01</th>
+                            <th>2012-01-01</th>
+                        </tr>
+                        </thead>
+                    </table>
+                </div>
+                <div class="table-body">
+                    <table class="table table-hover table-bordered">
+                        <colgroup>
+                            <col style="width: 125px;"/>
+                            <col/>
+                        </colgroup>
+                        <tbody>
+                        <tr>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+
+                        </tr>
+                        <tr>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+
+                        </tr>
+                        <tr>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+
+                        </tr>
+                        <tr>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+
+                        </tr>
+                        <tr>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+
+                        </tr>
+                        <tr>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+
+                        </tr>
+                        <tr>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+
+                        </tr>
+                        <tr>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+
+                        </tr>
+                        <tr>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+
+                        </tr>
+                        <tr>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+
+                        </tr>
+                        <tr>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+
+                        </tr>
+                        <tr>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+
+                        </tr>
+                        <tr>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+
+                        </tr>
+                        <tr>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+
+                        </tr>
+                        <tr>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+
+                        </tr>
+                        <tr>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+
+                        </tr>
+
+
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="finance-data profit-table">
+                <div style="width: 2000px;" class="profit active" >
+                    <div class="table-head">
+                        <table class="table table-hover table-bordered">
+                            <colgroup>
+                                <col style="width: 125px;"/><col/>
+                            </colgroup>
+                            <thead>
+                            <tr>
+                                <th>2012-01-02 年</th>
+                                <th>2012-01-01</th>
+                                <th>2012-01-01</th>
+                                <th>2012-01-01</th>
+                                <th>2012-01-01</th>
+                                <th>2012-01-01</th>
+                                <th>2012-01-01</th>
+                                <th>2012-01-01</th>
+                                <th>2012-01-01</th>
+                                <th>2012-01-01</th>
+                                <th>2012-01-01</th>
+                                <th>2012-01-01</th>
+                                <th>2012-01-01</th>
+                                <th>2012-01-01</th>
+                                <th>2012-01-01</th>
+                                <th>2012-01-01</th>
+                            </tr>
+                            </thead>
+                        </table>
+                    </div>
+                    <div class="table-body">
+                        <table class="table table-hover table-bordered">
+                            <colgroup>
+                                <col style="width: 125px;"/>
+                                <col/>
+                            </colgroup>
+                            <tbody>
+                            <tr>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+
+                            </tr>
+                            <tr>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+
+                            </tr>
+                            <tr>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+
+                            </tr>
+                            <tr>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+
+                            </tr>
+                            <tr>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+
+                            </tr>
+                            <tr>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+
+                            </tr>
+                            <tr>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+
+                            </tr>
+                            <tr>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+
+                            </tr>
+                            <tr>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+
+                            </tr>
+                            <tr>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+
+                            </tr>
+                            <tr>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+
+                            </tr>
+                            <tr>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+
+                            </tr>
+                            <tr>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+
+                            </tr>
+                            <tr>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+
+                            </tr>
+                            <tr>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+
+                            </tr>
+                            <tr>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+
+                            </tr>
+
+
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div style="width: 2000px;" class="profit" >
+                    <div class="table-head">
+                        <table class="table table-hover table-bordered">
+                            <colgroup>
+                                <col style="width: 125px;"/><col/>
+                            </colgroup>
+                            <thead>
+                            <tr>
+                                <th>2012-01-02月</th>
+                                <th>2012-01-01</th>
+                                <th>2012-01-01</th>
+                                <th>2012-01-01</th>
+                                <th>2012-01-01</th>
+                                <th>2012-01-01</th>
+                                <th>2012-01-01</th>
+                                <th>2012-01-01</th>
+                                <th>2012-01-01</th>
+                                <th>2012-01-01</th>
+                                <th>2012-01-01</th>
+                                <th>2012-01-01</th>
+                                <th>2012-01-01</th>
+                                <th>2012-01-01</th>
+                                <th>2012-01-01</th>
+                                <th>2012-01-01</th>
+                            </tr>
+                            </thead>
+                        </table>
+                    </div>
+                    <div class="table-body">
+                        <table class="table table-hover table-bordered">
+                            <colgroup>
+                                <col style="width: 125px;"/>
+                                <col/>
+                            </colgroup>
+                            <tbody>
+                            <tr>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+
+                            </tr>
+                            <tr>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+
+                            </tr>
+                            <tr>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+
+                            </tr>
+                            <tr>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+
+                            </tr>
+                            <tr>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+
+                            </tr>
+                            <tr>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+
+                            </tr>
+                            <tr>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+
+                            </tr>
+                            <tr>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+
+                            </tr>
+                            <tr>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+
+                            </tr>
+                            <tr>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+
+                            </tr>
+                            <tr>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+
+                            </tr>
+                            <tr>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+
+                            </tr>
+                            <tr>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+
+                            </tr>
+                            <tr>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+
+                            </tr>
+                            <tr>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+
+                            </tr>
+                            <tr>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+                                <td>数1</td>
+
+                            </tr>
+
+
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+
+            <div style="width: 2000px;" class="finance-data" >
+                <div class="table-head">
+                    <table class="table table-hover table-bordered">
+                        <colgroup>
+                            <col style="width: 125px;"/><col/>
+                        </colgroup>
+                        <thead>
+                        <tr>
+                            <th>2012-01-03</th>
+                            <th>2012-01-01</th>
+                            <th>2012-01-01</th>
+                            <th>2012-01-01</th>
+                            <th>2012-01-01</th>
+                            <th>2012-01-01</th>
+                            <th>2012-01-01</th>
+                            <th>2012-01-01</th>
+                            <th>2012-01-01</th>
+                            <th>2012-01-01</th>
+                            <th>2012-01-01</th>
+                            <th>2012-01-01</th>
+                            <th>2012-01-01</th>
+                            <th>2012-01-01</th>
+                            <th>2012-01-01</th>
+                            <th>2012-01-01</th>
+                        </tr>
+                        </thead>
+                    </table>
+                </div>
+                <div class="table-body">
+                    <table class="table table-hover table-bordered">
+                        <colgroup>
+                            <col style="width: 125px;"/>
+                            <col/>
+                        </colgroup>
+                        <tbody>
+                        <tr>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+
+                        </tr>
+                        <tr>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+
+                        </tr>
+                        <tr>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+
+                        </tr>
+                        <tr>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+
+                        </tr>
+                        <tr>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+
+                        </tr>
+                        <tr>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+
+                        </tr>
+                        <tr>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+
+                        </tr>
+                        <tr>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+
+                        </tr>
+                        <tr>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+
+                        </tr>
+                        <tr>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+
+                        </tr>
+                        <tr>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+
+                        </tr>
+                        <tr>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+
+                        </tr>
+                        <tr>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+
+                        </tr>
+                        <tr>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+
+                        </tr>
+                        <tr>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+
+                        </tr>
+                        <tr>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+                            <td>数1</td>
+
+                        </tr>
+
+
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+
+        </div>
+
+
+    </div>
+</div>
+
+
+
+
+
+
+
+
+<script src="static/build/lib/jquery.min.js"></script>
+<script src="static/build/lib/sea.min.js"></script>
+<script src="static/build/js/base.min.js"></script>
+<script>
+    $(function () {
+        seajs.use('common',function (c) {
+            c.getCurrentDate();c.bar();c.finaceCharts('financial-char');
+        })
+    })
+</script>
+
+</body>
+</html>
